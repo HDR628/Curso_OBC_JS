@@ -1,5 +1,5 @@
 /* Cadastro de Recrutas */
-
+window.alert("Cadastro de Recrutas");
 let firstName = prompt("Escreva seu primeiro nome:");
 
 let lastName = prompt("Escreva seu sobrenome:");
@@ -16,6 +16,17 @@ console.log(firstName);
 console.log(lastName);
 console.log(studyArea);
 console.log("Sua idade atual e: " + calculateAge);
+/* Outra forma de apresentar os dados das variaveis : */
+alert(
+  "Recruta cadastrado com sucesso! Nome do Recruta:" +
+    firstName +
+    lastName +
+    " Atualmente estuda/trabalho no ramo de:" +
+    studyArea +
+    "e tem" +
+    calculateAge +
+    " anos"
+);
 
 window.alert("Passando para o proximo exercicio");
 
