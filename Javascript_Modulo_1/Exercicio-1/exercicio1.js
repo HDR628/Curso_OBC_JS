@@ -18,12 +18,12 @@ console.log(studyArea);
 console.log("Sua idade atual e: " + calculateAge);
 /* Outra forma de apresentar os dados das variaveis : */
 alert(
-  "Recruta cadastrado com sucesso! Nome do Recruta:" +
+  "Recruta cadastrado com sucesso! Nome do Recruta: " +
     firstName +
     lastName +
-    " Atualmente estuda/trabalho no ramo de:" +
+    " Atualmente estuda/trabalho no ramo de: " +
     studyArea +
-    "e tem" +
+    "e tem " +
     calculateAge +
     " anos"
 );
