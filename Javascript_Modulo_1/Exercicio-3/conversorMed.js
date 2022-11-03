@@ -11,25 +11,29 @@ let unidadeMedida = prompt(
 switch (unidadeMedida) {
   case "mm":
     convertedNumber = meters * 1000;
+    alert("O resultado obtido atraves da conversao foi = " + convertedNumber);
     break;
   case "cm":
     convertedNumber = meters * 100;
+    alert("O resultado obtido atraves da conversao foi = " + convertedNumber);
     break;
   case "dm":
     convertedNumber = meters * 10;
+    alert("O resultado obtido atraves da conversao foi = " + convertedNumber);
     break;
   case "dam":
     convertedNumber = meters / 10;
+    alert("O resultado obtido atraves da conversao foi = " + convertedNumber);
     break;
   case "hm":
     convertedNumber = meters / 100;
+    alert("O resultado obtido atraves da conversao foi = " + convertedNumber);
     break;
   case "km":
     convertedNumber = meters / 1000;
+    alert("O resultado obtido atraves da conversao foi = " + convertedNumber);
     break;
   default:
     alert("Opção inválida,tente novamente");
     break;
 }
-
-alert("O resultado obtido atraves da conversao foi = " + convertedNumber);
