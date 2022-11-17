@@ -1,24 +1,35 @@
-let array = ["Zeus ", "Ares ", "Afrodite ", "Poseidon "];
-answer = ""; // receber resposta de continuacao/add/remove
+let queue = [];
+choose = ""; // receber resposta de continuacao/add/remove
 
-alert("Ola amigo seja bem vindo ao consultório\nPor favor aguarde a ordem do seguinte pacientes: ");
-for (let i = 0; i < array.length; i++) {
-  alert(i + 1 + "º -  Paciente: " + array[i]);
-}
-answer = prompt("Voce desaja adicionar novo paciente, consultar paciente ou Sair ? (adicionar/consultar/sair)");
-
-// novo paciente add at the end of array (push)
-// consultar paciente remove first paciente and show your name (shift)
-// sair
+// numeros são melhores para "menu interativo"
 
 do {
-  if (answer === "adicionar") {
-    let add = prompt("Por favor escreva o nome do paciente: ");
-    add = array.push(add);
-  } else if (answer === "consultar") {
-    let consult = array.shift();
-    alert("Paciente consultado : " + consult);
+  let patients = ""; // String para receber os pacientes em texto da queue/fila
+  for (let i = 0; i < queue.length; i++) {
+    /*  iterar os elementos adicionados no array e coloca-los em variaveis de textos para mostra-los todos juntos ao inves de um alert/prompt para apenas 1 elemetos(bug no commit no anterior)   */
+    patients += i + 1 + "º " + queue[i] + "\n";
   }
-  alert("Ordem de pacientes atual: " + array);
-  answer = prompt("  Voce desaja adicionar novo paciente, consultar paciente ou Sair ? (adicionar/consultar/sair) ");
-} while (answer !== "sair");
+
+  choose = prompt(
+    "Consultorio - Fila de Espera:\n" +
+      patients +
+      "\nOpções: \n1 - Adicionar novo paciente \n2 - Consultar paciente \n3 - Sair"
+  );
+
+  switch (choose) {
+    case "1":
+      let newPatients = prompt("Qual o nome do paciente ? ");
+      queue.push(newPatients);
+      break;
+    case "2":
+      let checkPatients = queue.shift();
+      alert("Paciente consultado: " + checkPatients);
+      break;
+    case "3":
+      alert("Encerrando expediente...");
+      break;
+    default:
+      alert("Opção inválida");
+      break;
+  }
+} while (choose !== "3");

@@ -1,28 +1,30 @@
-let cards = ["valete", "dama", "rei", "coringa"];
-let cardsLength = cards.length;
-let answer = ""; // receive answer from user (add/remove/end)
+let cards = [];
+let countCards;
+let choose = ""; // receive answer from user
 // apply method LIFO(Last in Fisrt out)
 
 do {
-  answer = prompt(
+  choose = prompt(
     "Bem vindo a mesa, atualmente o baralho esta disposto com " +
-      cardsLength +
-      " cartas. Deseja adicionar/tirar carta ou sair ? (adicionar/tirar/sair)"
+      cards.length +
+      " cartas\n1 - Adicionar carta \n2 - Tirar carta \n3 - Sair"
   );
 
-  if (answer === "adicionar") {
-    let addCard = prompt("Infome o nome da carta");
-    addCard = cards.push(addCard);
-    cardsLength++;
-  } else if (answer === "tirar") {
-    let take = cards.pop();
-    alert("Carta tirada: " + take);
-    cardsLength--;
+  switch (choose) {
+    case "1":
+      let newCard = prompt("Qual carta deseja adicionar ? ");
+      cards.push(newCard);
+      countCards++;
+      break;
+    case "2":
+      let pullCard = cards.pop();
+      alert("Carta puxada: " + pullCard);
+      break;
+    case "3":
+      alert("Saindo da mesa...");
+      break;
+    default:
+      alert("Opção inválida");
+      break;
   }
-  /* alert(
-    "Muito bem, agora a mesa está disposta com " +
-      cardsLength +
-      ". Sendo elas: " +
-      cards
-  );  teste  */
-} while (answer !== "sair");
+} while (choose !== "3");
