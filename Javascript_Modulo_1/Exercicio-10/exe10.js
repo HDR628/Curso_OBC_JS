@@ -32,6 +32,10 @@ function criarVaga() {
 function verVagas() {
   listarVaga()
   let escolha = parseFloat(prompt(`Qual o indice da vaga desejada ?`))
+  if (escolha >= vagas.length || escolha < 0) {
+    alert("Indice indisponivel.")
+    return
+  }/* Estava retornando undefined quando indicado uma vaga/indice não existente. Adicionando o if para testar se existia a vaga não ocorria/prevenia o erro de acontecer. O return posto ao fim age como se fosse um break(tipo do switch) e não continua a função. Outra forma também seria colocar o bloco de codigo seguinte dentro do else */
   alert(`Indice: ${escolha}\n
   Vaga: ${vagas[escolha].nomeVaga}\n
   Descrição: ${vagas[escolha].descVaga}\n
