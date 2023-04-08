@@ -6,8 +6,8 @@ let choose = ""; // receive answer from user
 do {
   choose = prompt(
     "Bem vindo a mesa, atualmente o baralho esta disposto com " +
-      cards.length +
-      " cartas\n1 - Adicionar carta \n2 - Tirar carta \n3 - Sair"
+    cards.length +
+    " cartas\n1 - Adicionar carta \n2 - Tirar carta \n3 - Sair"
   );
 
   switch (choose) {

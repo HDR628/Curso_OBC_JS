@@ -18,25 +18,25 @@ console.log(studyArea);
 console.log("Sua idade atual e: " + calculateAge);
 /* Outra forma de apresentar os dados das variaveis : */
 alert(
-  "Recruta cadastrado com sucesso! Nome do Recruta: " +
-    firstName +
-    lastName +
-    " Atualmente estuda/trabalho no ramo de: " +
-    studyArea +
-    "e tem " +
-    calculateAge +
-    " anos"
+  "Recruta cadastrado com sucesso! \n Nome do Recruta: " +
+  firstName + " " +
+  lastName +
+  "\n Atualmente estuda/trabalho no ramo de: " +
+  studyArea +
+  " e tem " +
+  calculateAge +
+  " anos"
 );
 
 window.alert("Passando para o proximo exercicio");
 
 /* Calculadora de 4 Operações */
 
-// Create two variables to receive numbers;
+// Create two variables to receive numbers; Receberam em forma de string/texto, importante passar para number
 let x = prompt("Digite o primeiro numero:");
 let y = prompt("Digite o segundo numero:");
 
-/* Returning a number */
+/* Returning a number from string receive above */
 let xFloat = parseFloat(x);
 let yFloat = parseFloat(y);
 

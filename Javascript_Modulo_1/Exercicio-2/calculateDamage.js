@@ -13,8 +13,9 @@ const characterDefName = prompt("Digite o nome do personagem de defesa: ");
 const defHealth = prompt("Digite a quantidade de vida do personagem: ");
 const yDef = prompt("Digite o poder de defesa: ");
 let defPower = parseFloat(yDef);
-const shield = prompt("O personagem usa escudo ?: ");
+const shield = prompt("O personagem usa escudo (yes/no) ? ");
 let afterAtk;
+
 
 if (atkPower > defPower) {
   if (shield === "yes" || shield === "Yes") {
@@ -33,24 +34,24 @@ afterAtk = defHealth - damage;
 
 alert(
   "Resultado Finais\n" +
-    "Personagem de Ataque" +
-    "\nNome: " +
-    characterAtkName +
-    "\nPoder de ATK: " +
-    atkPower +
-    "\n\nPersonagem na defesa " +
-    "\nNome: " +
-    characterDefName +
-    "\nQTD de vida: " +
-    defHealth +
-    "\nPoder de defesa: " +
-    defPower +
-    "\nO personagem usou escudo: " +
-    shield +
-    "\nO dano causado pelo " +
-    characterAtkName +
-    " foi de " +
-    damage +
-    ". Sobrando de vida apenas " +
-    afterAtk
+  "Personagem de Ataque" +
+  "\nNome: " +
+  characterAtkName +
+  "\nPoder de ATK: " +
+  atkPower +
+  "\n\nPersonagem na defesa " +
+  "\nNome: " +
+  characterDefName +
+  "\nQTD de vida: " +
+  defHealth +
+  "\nPoder de defesa: " +
+  defPower +
+  "\nO personagem usou escudo: " +
+  shield +
+  "\nO dano causado pelo " +
+  characterAtkName +
+  " foi de " +
+  damage +
+  ". Sobrando de vida apenas " +
+  afterAtk
 );
