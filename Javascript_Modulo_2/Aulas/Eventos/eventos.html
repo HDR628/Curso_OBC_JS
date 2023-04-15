@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./eventos.css" />
+    <title>Eventos</title>
+  </head>
+  <body>
+    <h1>Eventos 🫡</h1>
+    <div>
+      <label for="onClickMouse">Evento de clique</label>
+      <!-- ajuda acessibilidade, faz menção/referencia ao elemento input posterior -->
+      <input
+        type="text"
+        id="onClickMouse"
+        placeholder="Clique aqui"
+        onclick="onClick()"
+      />
+      <img
+        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fgifs.eco.br%2Fwp-content%2Fuploads%2F2022%2F08%2Fgifs-de-click-0.gif&f=1&nofb=1&ipt=38f243e9607e5d6caa0d38cc090cbf76959cad3577327593f52459f9683a70e2&ipo=images"
+        alt="gif do cursor clicando"
+        width="30px"
+        height="30px"
+      />
+    </div>
+
+    <div>
+      <label for="onMouseEnter">Evento de entrada</label>
+      <input
+        type="text"
+        name="onMouseEnter"
+        id="onMouseEnter"
+        placeholder="Entrada do Mouse"
+        onmouseenter="console.log(`Enter`)"
+      />
+      <!-- Modo inline -->
+      <img
+        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2Fca9fd7a1f70a92a8075b4a48a207847e%2Ftenor.gif%3Fitemid%3D15900172&f=1&nofb=1&ipt=205bf609be71e3370dfb0aa51f87e1e329730b3f22e8da1a12ec764cea36775c&ipo=images"
+        alt="The Rock gif"
+        height="60px"
+        width="60px"
+      />
+    </div>
+
+    <div>
+      <label for="onChange">Evento onChange</label>
+      <input
+        type="text"
+        placeholder="Type anything here"
+        id="onChange"
+        onchange="onChange()"
+      />
+    </div>
+
+    <div>
+      <label for="onFocus">Evento onFocus</label>
+      <input
+        type="text"
+        id="onFocus"
+        placeholder="Foco aqui"
+        onfocus="onFocus()"
+      />
+    </div>
+
+    <div>
+      <label for="onBlur">Evento onBlur</label>
+      <input
+        type="text"
+        placeholder="onBlur"
+        id="onBlur"
+        onblur="console.log(`Desfocou dnv 🥲`)"
+      />
+    </div>
+    <script src="./eventos.js"></script>
+  </body>
+</html>
