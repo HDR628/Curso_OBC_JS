@@ -37,17 +37,16 @@ function addPerson() {
 
 
   let phoneNumber = document.createElement("li")
-  phoneNumber.ariaLabel = "Telefone: " /* Tentativa de adicionar label e usar como referencia/linkar posterior */
+  phoneNumber.innerText = "Telefone: " /* Tentativa de adicionar label e usar como referencia/linkar posterior */
 
   let phoneInput = document.createElement("input")
   phoneInput.type = "text"
-  phoneInput.id = "Telefone: "
   phoneInput.name = "Telefone"
 
   /* Conexão dos nós */
   phoneNumber.appendChild(phoneInput)
-  listUl.appendChild(phoneNumber)
-  localPerson.append(listUl)
+  listUl.append(phoneNumber, document.createElement("br"))
+  localPerson.append(listUl) /* Não funciona criar elemento(quebra de linha junto outro elemento🤔 */
 
 
   let address = document.createElement("li")
@@ -75,7 +74,6 @@ function addPerson() {
   // localPerson.appendChild(listUl)
   localPerson.append(newContact, listUl) /* Passando elementos. New person aparece em cima dos inputs/label normalmente */
 }
-
 
 function removePerson() {
   /* Referenciar o local de onde será retirado a pessoa */
