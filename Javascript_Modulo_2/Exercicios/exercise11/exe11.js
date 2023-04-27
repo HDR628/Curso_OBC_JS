@@ -26,16 +26,17 @@ function addPlayer() {
 }
 
 function removePlayer() {
-  /* Local para remoção */
-  let localRemove = document.getElementById(`team-list`)
+  let number = document.getElementById("numberToRemove").value
+  let playerToRemove = document.getElementById("player" + number)
 
-  let removePlayerByNumber = document.getElementById(`NumberToRemove`)
-
-  let confirmation = confirm(`Deseja remover o jogador: ${name} da posição: ${position}`)
+  let confirmation = confirm("Remover " + playerToRemove.innerText + "?")
 
   if (confirmation) {
-    localRemove.removeChild(removePlayerByNumber)
-
-    document.getElementById(`numberToRemove`).value = ""
+    document.getElementById(`team-list`).removeChild(playerToRemove)
+    /* Outra maneira de pegar o playerRemover e apenas passar o remove, referenciando ele mesmo
+    playerRemove.remove()
+    */
+    /* Reset input */
+    document.getElementById(`numberToRemove`) = ""
   }
 }
