@@ -8,14 +8,26 @@
     <title>Escalando um time</title>
   </head>
   <body>
-    <h1>Escalação Time</h1>
+    <h1>Escalação do Time</h1>
     <hr />
-    <button onclick="escalarJogador()">Escalar Jogador</button>
-    <button onclick="removerJogador()">Remover jogador</button>
-    <br />
-    <br />
+    <p>
+      <label for="position">Posição:</label>
+      <input type="text" id="position" />
 
-    <section id="escalacao"></section>
-    <section id="listandoJogadores"></section>
+      <label for="name">Nome:</label>
+      <input type="text" id="name" />
+
+      <label for="number">Número:</label>
+      <input type="number" id="number" />
+      <button onclick="addPlayer()">Escalar</button>
+    </p>
+    <h2>Remover Jogador</h2>
+    <p>
+      <label for="numberToRemove">Número:</label>
+      <input type="number" id="numberToRemove" />
+      <button onclick="removePlayer()">Remover</button>
+    </p>
+    <h2>Time:</h2>
+    <ul id="team-list"></ul>
   </body>
 </html>

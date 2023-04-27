@@ -1,51 +1,41 @@
-function escalarJogador() {
-  /* referenciar local */
-  let players = document.getElementById(`escalacao`)
+function addPlayer() {
+  /* Referenciando os inputs do usuários */
+  let position = document.getElementById(`position`).value
+  let name = document.getElementById(`name`).value
+  let number = document.getElementById(`number`).value
+  /* Value irá retornar/acessar o valor/input do usuário*/
 
-  let camposPreencher = document.createElement(`ol`) /* Campo para receber labels e inputs */
-  camposPreencher.type = `I`
+  let confirmation = confirm(`Deseja escalar o seguinte jogador:  ${name} na posição:  ${position}`)
 
-  let position = document.createElement(`li`)
-  position.innerHTML = `<label for="position">Posição do Jogador: </label>`
+  if (confirmation) {
+    /* Referenciar o local onde sera "jogado" os jogadores */
+    let team = document.getElementById(`team-list`)
 
-  let positionInput = document.createElement(`input`)
-  positionInput.type = `text`
-  positionInput.id = `position`
+    /* Criar elemento da lista */
+    let playerLi = document.createElement(`li`)
+    playerLi.id = `player` + number
+    playerLi.innerText = `Posição: ${position} - Jogador: ${name}(${number})`
 
-  /* Conectando */
-  position.appendChild(positionInput)
-  // players.appendChild(position) teste - funciona label e input 
+    team.appendChild(playerLi)
 
-  let namePlayer = document.createElement('li')
-  namePlayer.innerHTML = `<label for="name">Nome do Jogador: </label>`
-
-  let namePlayerInput = document.createElement('input')
-  namePlayerInput.type = `text`
-  namePlayerInput.id = `name`
-
-  namePlayer.appendChild(namePlayerInput)
-
-
-  let number = document.createElement(`li`)
-  number.innerHTML = `<label for="number">Numero da camisa</label>`
-
-  let numberInput = document.createElement("input")
-  numberInput.type = `text`
-  numberInput.id = `number`
-
-  number.appendChild(numberInput)
-
-  let confirmarEscalar = document.createElement("alert")
-  confirmarEscalar.innerText = `Deseja salvar essa escalação: `
-
-  if (confirmarEscalar) {
-    camposPreencher.append(position, namePlayer, number)
-    players.appendChild(camposPreencher)
-  } else {
-    alert("A escalação inserida não foi salva😶")
+    /* Reset/limpando os inputs dos usuários */
+    document.getElementById(`position`).value = ``
+    document.getElementById(`name`).value = ``
+    document.getElementById(`number`).value = ``
   }
-} /* Funcionando parcialmente - Adicionar quebras de linhas/css para melhor exibição*/
+}
 
+function removePlayer() {
+  /* Local para remoção */
+  let localRemove = document.getElementById(`team-list`)
 
+  let removePlayerByNumber = document.getElementById(`NumberToRemove`)
 
+  let confirmation = confirm(`Deseja remover o jogador: ${name} da posição: ${position}`)
 
+  if (confirmation) {
+    localRemove.removeChild(removePlayerByNumber)
+
+    document.getElementById(`numberToRemove`).value = ""
+  }
+}
