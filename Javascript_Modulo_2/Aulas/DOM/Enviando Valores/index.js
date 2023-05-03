@@ -6,5 +6,9 @@ function register(element) {
   /* Outra forma de capturar elementos dentro do ParentNode, sem ser apenas pelo document.get...
    */
 
-  console.log(username, password, passwordConfirmation)
+  if (password === passwordConfirmation) {
+    alert(`O usuário ${username} foi registrado com sucesso`)
+  } else {
+    alert(`As senhas não batem.Tente novamente`)
+  }
 }
