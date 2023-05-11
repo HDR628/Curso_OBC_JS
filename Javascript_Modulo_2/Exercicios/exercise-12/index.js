@@ -63,16 +63,29 @@ addTechButton.addEventListener(`click`, function (ev) {
   localReference.appendChild(div)
 
   console.log(localReference)
+})
 
+let removeLineButton = document.getElementById(`removeLine`)
+
+removeLineButton.addEventListener(`click`, function (ev) {
+  /* Necessário o preventDefault, pois a pagina é carregada novamente ao ser "clicada" */
+  ev.preventDefault()
+
+  let localRemove = document.getElementById(`formHere`)/* Referencia ao local onde tinha os elementos a serem excluídos */
+
+  let divRemove = document.getElementsByTagName(`div`) /* Selecionei a partir da tag desejada para excluir */
+
+  localRemove.removeChild(divRemove[divRemove.length - 1])/* Os colchetes são usados para referenciar posições numéricas, no entanto pode-se utilizar da propriedade length para remover o ultimo elemento, como nesse caso */
 
 })
 
 
-/* Small Steps
+
+/* Small Steps/Check's
   [x] Gerar um numero/id aleatório para div 
   [x] Gerar um id/htmlFor único para cada grupo de div's(e seus inputs)
   [x] Conectar as label e inputs respectivamente para não haver conflitos com outras div
   []  Como acessar esses input's/id gerados aleatoriamente ?
-  []  Criação de um botão de excluir as linhas(Div, por completo na minha interpretação)
+  [x]  Criação de um botão de excluir as linhas(Div, por completo na minha interpretação)
   []  Criação de um array que irá guardar os respectivos dados dos desenvolvedores
 */
