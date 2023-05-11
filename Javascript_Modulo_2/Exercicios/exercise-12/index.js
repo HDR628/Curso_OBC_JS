@@ -6,7 +6,7 @@ addTechButton.addEventListener(`click`, function (ev) {
   let localReference = document.getElementById(`formHere`)
 
   let div = document.createElement(`div`)
-  div.id = Math.floor(Math.random() * 20) + 1
+  div.id = Math.floor(Math.random() * 50) + 1
 
 
 
@@ -23,7 +23,7 @@ addTechButton.addEventListener(`click`, function (ev) {
   /* Radio input's */
 
   let labelRadioZero = document.createElement('label')
-  labelRadioZero.htmlFor = Math.floor(Math.random() * 20) + 1   /* 'zeroTwo' */ /* id para ligar com o for */
+  labelRadioZero.htmlFor = Math.floor(Math.random() * 50) + 1   /* 'zeroTwo' */ /* id para ligar com o for */
   labelRadioZero.innerText = `0-2 anos experiencia` /* isso aqui e para o label */
 
   let inputRadioZero = document.createElement(`input`)
@@ -35,22 +35,22 @@ addTechButton.addEventListener(`click`, function (ev) {
 
   /* 1 */
   let labelRadioOne = document.createElement('label')
-  labelRadioOne.htmlFor = 'threeFour' /* id para ligar com o for */
+  labelRadioOne.htmlFor = Math.floor(Math.random() * 50) + 1 /* id para ligar com o for */
   labelRadioOne.innerText = `3-4 anos experiencia` /* isso aqui e para o label */
 
   let inputRadioOne = document.createElement(`input`)
   inputRadioOne.type = `radio`
-  inputRadioOne.id = `threeFour`
+  inputRadioOne.id = labelRadioOne.htmlFor
   inputRadioOne.name = `radios` + div.id
 
   /* 2 */
   let labelRadioTwo = document.createElement('label')
-  labelRadioTwo.htmlFor = 'moreFive' /* id para ligar com o for */
-  labelRadioTwo.innerText = `5+ anos experiencia` /* isso aqui e para o label */
+  labelRadioTwo.htmlFor = Math.floor(Math.random() * 50) + 1
+  labelRadioTwo.innerText = `5+ anos experiencia`
 
   let inputRadioTwo = document.createElement(`input`)
   inputRadioTwo.type = `radio`
-  inputRadioTwo.id = `moreFive`
+  inputRadioTwo.id = labelRadioTwo.htmlFor
   inputRadioTwo.name = `radios` + div.id
 
   labelTech.append(nameTech, document.createElement(`br`))
@@ -63,11 +63,6 @@ addTechButton.addEventListener(`click`, function (ev) {
   localReference.appendChild(div)
 
   console.log(localReference)
-
-
-
-
-
 
 
 })
