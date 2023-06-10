@@ -95,17 +95,16 @@ let waitSubmit = addEventListener(`submit`, function (ev) {
   let firstInput = div.querySelector(`input`).value
   console.log(firstInput)
 
-  let radioValue = div.querySelectorAll(`input[id=radios]`).value
+  let radioValue = div.getElementsByTagName(`input>radio`).value
   console.log(radioValue)/* Return undefined 🤔 */
 
 })
 
 /* Small Steps/Check's
-  [x] Gerar um numero/id aleatório para div 
-  [x] Gerar um id/htmlFor único para cada grupo de div's(e seus inputs)
-  [x] Conectar as label e inputs respectivamente para não haver conflitos com outras div
-  []  Como acessar esses input's/id gerados aleatoriamente ?
-  [x]  Criação de um botão de excluir as linhas(Div, por completo na minha interpretação)
+  []  Criar um contador para cada elemento(input + label e agrega-lo ao contador) 
+  [] Criação de um botão de excluir as linhas em conjunto com os inputs e label
   []  Criação de um array que irá guardar os respectivos dados dos desenvolvedores
-  [] Facilitar/padronizar o acesso as div e seus respectivos conteúdos(input/label)
+  []  Facilitar/padronizar o acesso as div e seus respectivos conteúdos(input/label)
 */
+
+/* Todas label tem innerText,htmlFor e todos inputs tem id,name and value */
