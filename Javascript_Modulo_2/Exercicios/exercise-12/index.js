@@ -15,112 +15,48 @@ function createInput(id, value, name, type = `text`, placeholder = ``) {
   return input
 }
 
-let addTechButton = document.getElementById(`addTechButton`)
+let addTechBtn = document.getElementById(`addTechBtn`)
+let formDev = document.getElementById(`formDev`)
+let arrayDev = []
+let count = 0
 
-addTechButton.addEventListener(`click`, function (ev) {
-  ev.preventDefault()
+addTechBtn.addEventListener(`click`, function (ev) {
+  /* Peguei o local onde será colocado/aparecera as tecnologias/inputs */
+  const inputsTech = document.getElementById(`inputsTech`)
 
-  let localReference = document.getElementById(`formDev`)
+  /* Criação de uma nova linha que posteriormente sera passada ao local de referencia  */
+  const newLine = document.createElement(`li`)
+  const lineIndex = count /* Atribuição de um contador a cada elemento que for criado, acrescentando o numero */
+  count++
+  newLine.id = `newLine-` + lineIndex
+  newLine.className = `inputLine`
 
-  let div = document.createElement(`div`)
-  div.id = Math.floor(Math.random() * 50) + 1
+  const techNameLabel = createLabel(`Nome: `, `techName-` + lineIndex) /* Passando os parâmetros em ordem */
+  const techNameInput = createInput(`techName-` + lineIndex, null, `techName`) /* Mesclar/unir com o htmlFor acima */
 
-  let labelTech = document.createElement(`label`)
-  labelTech.htmlFor = Math.floor(Math.random() * 10) + 1
-  /* `nameTech` */
-  labelTech.innerText = `Digite o nome da tecnologia: `
+  const expLabel = createLabel(` - Experiencias`)
+  const radioId1 = `expRadio-` + lineIndex + `.1`
+  const expRadio1 = createInput(radioId1, `0-2 anos`, `techExp-` + lineIndex, `radio`)
+  const expLabel1 = createLabel(`0-2 anos`, radioId1)
 
-  let nameTech = document.createElement(`input`)
-  nameTech.type = `text`
-  nameTech.id = labelTech.htmlFor
-  /* `nameTech` */
+  const radioId2 = `expRadio-` + lineIndex + `.2`
+  const expRadio2 = createInput(radioId2, `3-4 anos`, `techExp-` + lineIndex, `radio`)
+  const expLabel2 = createLabel(`3-4 anos`, radioId2)
 
-  /* Radio input's */
+  const radioId3 = `expRadio-` + lineIndex + `.3`
+  const expRadio3 = createInput(radioId3, `5+ anos`, `techExp-` + lineIndex, `radio`)
+  const expLabel3 = createLabel(`5+ anos`, radioId3)
+  /* Foi criado o name inicialmente com techExp para identificar todos os elementos, mas ocorre o problema de selecionar um linha e marcar nos outros elementos.Dessa forma sendo necessário diferencia-los com o lineIndex, nesse caso  */
 
-  let labelRadioZero = document.createElement('label')
-  labelRadioZero.htmlFor = Math.floor(Math.random() * 50) + 1  /* id para ligar com o for */
-  labelRadioZero.innerText = `0-2 anos experiencia` /* isso aqui e para o label */
+  newLine.append(techNameLabel, techNameInput, expLabel, expRadio1, expLabel1, expRadio2, expLabel2, expRadio3, expLabel3)
 
-  let inputRadioZero = document.createElement(`input`)
-  inputRadioZero.type = `radio`
-  inputRadioZero.id = labelRadioZero.htmlFor
-  inputRadioZero.name = `radios` + div.id
-  inputRadioZero.value = `0-2 years of experience`
-
-
-  /* 1 */
-  let labelRadioOne = document.createElement('label')
-  labelRadioOne.htmlFor = Math.floor(Math.random() * 50) + 1
-  labelRadioOne.innerText = `3-4 anos experiencia`
-
-  let inputRadioOne = document.createElement(`input`)
-  inputRadioOne.type = `radio`
-  inputRadioOne.id = labelRadioOne.htmlFor
-  inputRadioOne.name = `radios` + div.id
-  inputRadioOne.value = `3-4 years of experience`
-
-  /* 2 */
-  let labelRadioTwo = document.createElement('label')
-  labelRadioTwo.htmlFor = Math.floor(Math.random() * 50) + 1
-  labelRadioTwo.innerText = `5+ anos experiencia`
-
-  let inputRadioTwo = document.createElement(`input`)
-  inputRadioTwo.type = `radio`
-  inputRadioTwo.id = labelRadioTwo.htmlFor
-  inputRadioTwo.name = `radios` + div.id
-  inputRadioTwo.value = `5+ years of experience`
-
-  let submit = document.createElement(`input`)
-  submit.type = `submit`
-  submit.id = div.id /* Utilizar o id desse submit ao addEventListener de submit para ser acionado, referenciando a div por completa */
-  submit.value = `Cadastrar`
-
-  /* Juntando/mesclando os nós */
-  labelTech.append(nameTech, document.createElement(`br`))
-  labelRadioZero.append(inputRadioZero, document.createElement(`br`))
-  labelRadioOne.append(inputRadioOne, document.createElement(`br`))
-  labelRadioTwo.append(inputRadioTwo, document.createElement(`br`))
-
-  div.append(labelTech, labelRadioZero, labelRadioOne, labelRadioTwo, submit)
-  localReference.appendChild(div)
-
-  console.log(localReference)
-})
-
-let removeLineButton = document.getElementById(`removeLine`)
-
-removeLineButton.addEventListener(`click`, function (ev) {
-  /* Necessário o preventDefault, pois a pagina é carregada novamente ao ser "clicada" */
-  ev.preventDefault()
-
-  let localRemove = document.getElementById(`formHere`)/* Referencia ao local onde tinha os elementos a serem excluídos */
-
-  let divRemove = document.getElementsByTagName(`div`) /* Selecionei a partir da tag desejada para excluir */
-
-  localRemove.removeChild(divRemove[divRemove.length - 1])/* Os colchetes são usados para referenciar posições numéricas, no entanto pode-se utilizar da propriedade length para remover o ultimo elemento, como nesse caso */
-
-})
-
-let waitSubmit = addEventListener(`submit`, function (ev) {
-  ev.preventDefault()
-
-  let nameDev = document.getElementById(`name`).value
-  console.log(nameDev) /* it's work */
-
-  let div = document.querySelector(`div`)
-
-  let firstInput = div.querySelector(`input`).value
-  console.log(firstInput)
-
-  let radioValue = div.getElementsByTagName(`input>radio`).value
-  console.log(radioValue)/* Return undefined 🤔 */
-
+  inputsTech.appendChild(newLine)
 })
 
 /* Small Steps/Check's
-  []  Criar um contador para cada elemento(input + label e agrega-lo ao contador) 
-  [] Criação de um botão de excluir as linhas em conjunto com os inputs e label
-  []  Criação de um array que irá guardar os respectivos dados dos desenvolvedores
+  [x]  Criar um contador para cada elemento(input + label e agrega-lo ao contador) 
+  [x] Criação de um botão de excluir as linhas em conjunto com os inputs e label
+  [x]  Criação de um array que irá guardar os respectivos dados dos desenvolvedores
   []  Facilitar/padronizar o acesso as div e seus respectivos conteúdos(input/label)
 */
 
