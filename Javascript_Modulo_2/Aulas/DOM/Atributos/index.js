@@ -24,8 +24,7 @@ document.getElementById(`placeholder`).addEventListener(`click`, function () {
 document.getElementById(`disable`).addEventListener(`click`, function () {
   // console.log(input.disable) /* Return undefined */
   // input.getAttribute(`disable`)/* Return first element/code with attribute disable.Pre-defined html  */
-  input.setAttribute(`disable`, "!disabled")
-  /* Não ta funcionando 🥲 */
+  input.setAttribute(`disable`, !input.disable) /* Precisa encadear o input novamente e negar(not) o atributo caso esteja ativo...😅 */
 })
 
 document.getElementById(`data`).addEventListener(`click`, function () {
