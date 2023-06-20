@@ -15,6 +15,6 @@ function switchTheme() {
 
 }
 
-document.getElementById(`lightBtn`).addEventListener(`click`, useLightTheme) /* Possivel utilizar o addEventListener devido ao encadeamento */
+document.getElementById(`lightBtn`).addEventListener(`click`, useLightTheme) /* Possível utilizar o addEventListener devido ao encadeamento */
 document.getElementById(`darkBtn`).addEventListener(`click`, useDarkTheme)
 document.getElementById(`switchBtn`).addEventListener(`click`, switchTheme)
