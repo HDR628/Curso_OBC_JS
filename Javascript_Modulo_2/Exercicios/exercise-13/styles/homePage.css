@@ -1,0 +1,60 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: bisque;
+}
+
+body{
+  /* Visão total da tela */
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.container{
+  border: 2px solid black ; /* Remover depois, so para ter noção */
+  height: 37rem;
+  width: 34rem;
+  padding: 180px 24px;
+  border: 2px solid green;
+}
+
+h3 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.players {
+  border: 2px solid red;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin: 8px;
+  
+}
+
+.players input{
+  all: unset; /* Remove a estilização padrão de todos os input */
+  border: 1px dashed;
+  text-decoration: none;
+  text-align: center;
+  padding:4px;
+  display: flex; 
+}
+
+.btns{
+  border: 2px solid purple;
+  margin: 8px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px ;
+}
+
+.btns button {
+  padding: 12px;
+  border: 2px dashed plum;
+}
