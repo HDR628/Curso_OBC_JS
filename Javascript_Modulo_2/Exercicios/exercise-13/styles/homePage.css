@@ -2,7 +2,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  background-color: bisque;
+  background-color: #FAF9F6;
 }
 
 body{
@@ -15,16 +15,17 @@ body{
 }
 
 .container{
-  border: 2px solid black ; /* Remover depois, so para ter noção */
+  border-radius: 10px;
   height: 37rem;
   width: 34rem;
   padding: 180px 24px;
-  border: 2px solid green;
+  background-color: #BCBBB9;
 }
 
 h3 {
   text-align: center;
   font-size: 40px;
+  background-color: transparent;
 }
 
 .players {
@@ -33,28 +34,47 @@ h3 {
   display: flex;
   justify-content: space-between;
   margin: 8px;
-  
+  background-color: transparent;
 }
 
 .players input{
   all: unset; /* Remove a estilização padrão de todos os input */
-  border: 1px dashed;
-  text-decoration: none;
   text-align: center;
-  padding:4px;
+  padding: 12px;
   display: flex; 
+  background-color: #E1E0DD;
+  border-radius: 8px;
 }
 
-.btns{
+.buttons{
   border: 2px solid purple;
-  margin: 8px;
+  margin: 30px 8px;
   padding: 20px;
   display: flex;
   justify-content: center;
   gap: 10px ;
+  background-color: transparent;
 }
 
-.btns button {
+.buttons button {
   padding: 12px;
-  border: 2px dashed plum;
+  border-radius: 8px;
+  background-color: #E2CCFF; /* Remove a cor acinzentada*/
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons button img{
+  background-color: #E2CCFF;
+}
+
+.buttons button a img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #E2CCFF ;
 }
