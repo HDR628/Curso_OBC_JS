@@ -23,9 +23,11 @@ body{
 }
 
 h3 {
+  border: 1px solid greenyellow;
   text-align: center;
   font-size: 40px;
   background-color: transparent;
+  margin:auto 8px;
 }
 
 .players {
@@ -58,6 +60,7 @@ h3 {
 
 .buttons button {
   padding: 12px;
+  border: none;
   border-radius: 8px;
   background-color: #E2CCFF; /* Remove a cor acinzentada*/
   width: 100px;
