@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+* button{
+  border: 3px dashed plum;
+  border-radius: 8px;
+  padding: 6px;
+  background-color: transparent;
+}
+
 header{
   border: 2px solid red;
   width: 100vw;
@@ -26,9 +33,12 @@ header{
   gap: 10px ;
 }
 
-.tools button{
-  padding: 14px;
-  height: 50px;
+.tools button img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 14px;
+  height: 50px; */
 }
 
 div img{
@@ -56,14 +66,13 @@ div img{
 }
 
 
-.container .grid{
+.container .grid__areas{
   text-align: center;
-  padding: 14px;
   background-color: bisque;
   background-image: url("../assets/Grid.svg");
   background-repeat: no-repeat;
   background-size:contain;
-  margin: 16px 30px;
+  margin: 20px 30px;
   border: 3px solid blue;
   display: grid;
   grid-template-areas: 
@@ -74,3 +83,8 @@ div img{
   height: auto;
 }
 
+.container .grid .grid__areas--space{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

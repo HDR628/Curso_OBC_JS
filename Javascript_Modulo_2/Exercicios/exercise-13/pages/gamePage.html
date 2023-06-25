@@ -4,19 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../styles/gamePage.css">
+  <script defer src="../script.js"></script>
   <title>Tic Tac Toe</title>
 </head>
 <body>
   <header>
     <div class="logoImg">
-      <button href="../pages/homePage.html">
-        <img class="logoImg logo__element" src="../assets/tic-tac-toe-svgrepo-com.svg" alt="letter X and O on a grid, Tic Tac Toe game"> 
+      <button><a href="../pages/homePage.html">
+        <img class="logoImg logo__element" src="../assets/tic-tac-toe-svgrepo-com.svg" alt="letter X and O on a grid, Tic Tac Toe game">
+      </a>
+         
         <!-- Colocar um a href -->
       </button>
     </div>
     <div class="tools">
-        <button>Setinha de voltar</button>
-        <button>Theme Switch</button>
+        <button><a href="../pages/homePage.html"><img src="../assets/arrow-left-circle-svgrepo-com.svg" alt="left arrow to go back to HomePage"></a></button>
+        <button><img src="../assets/dark-mode-toggle-icon.svg" alt="dark-mode-toggle-icon"></button>
     </div> 
   </header> <!-- Apply a border-bottom -->
   <div class="container">
@@ -26,15 +29,15 @@
       <img src="../assets/X.svg" alt="letter X">
     </div>
     <div class="grid grid__areas">
-      <p class="grid__areas--space1">1</p>
-      <p class="grid__areas--space2">1</p>
-      <p class="grid__areas--space3">1</p>
-      <p class="grid__areas--space4">1</p>
-      <p class="grid__areas--space5">1</p>
-      <p class="grid__areas--space6">1</p>
-      <p class="grid__areas--space7">1</p>
-      <p class="grid__areas--space8">1</p>
-      <p class="grid__areas--space9">1</p>
+      <p class="grid grid__areas--space" id="space1">1</p>
+      <p class="grid grid__areas--space" id="space2">1</p>
+      <p class="grid grid__areas--space" id="space3">1</p>
+      <p class="grid grid__areas--space" id="space4">1</p>
+      <p class="grid grid__areas--space" id="space5">1</p>
+      <p class="grid grid__areas--space" id="space6">1</p>
+      <p class="grid grid__areas--space" id="space7">1</p>
+      <p class="grid grid__areas--space" id="space8">1</p>
+      <p class="grid grid__areas--space" id="space9">1</p>
     </div>
     <div class="player player__Two">
       <h2>Player 2</h2>
