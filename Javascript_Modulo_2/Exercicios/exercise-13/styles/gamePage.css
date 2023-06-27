@@ -8,7 +8,8 @@
   border: 3px dashed plum;
   border-radius: 8px;
   padding: 6px;
-  background-color: transparent;
+  /* background-color: transparent; */
+
 }
 
 header{
@@ -65,7 +66,6 @@ div img{
   gap: 30px ;
 }
 
-
 .container .grid__areas{
   text-align: center;
   background-color: bisque;
@@ -87,4 +87,11 @@ div img{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.xTurn {
+  background-image: url("../assets/X.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
