@@ -93,5 +93,12 @@ div img{
   background-image: url("../assets/X.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: 8em;
+}
+
+.oTurn{
+  background-image: url("../assets/O.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 9em;
 }
