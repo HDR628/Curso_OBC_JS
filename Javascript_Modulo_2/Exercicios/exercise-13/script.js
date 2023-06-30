@@ -1,8 +1,10 @@
 /* 
-[ ] Como saber o turno de cada jogador ?
-[ ] Como capturar o elemento/espaço a ser usado
-[ ] Como passar/criar a imagem a partir do clique do usuário
-[ ] Definir turno ?
+[X] Como saber o turno de cada jogador ? Resolução temporario e ir pelo data-turn atrelado ao container de grid
+[X] Como capturar o elemento/espaço a ser usado ?  Utilização do addEventListener 
+[X] Como passar/criar a imagem a partir do clique do usuário ? Foi adicionado classes aos respectivos cliques do usuários baseados no data-turn
+[ ] Criação de uma função/iteração que passe por todos os espaços e realize as funções abaixo da mesma forma 
+[ ] Como identificar/checar o vencedor ?
+
 */
 
 document.getElementById(`space1`).addEventListener(`click`, function () {
@@ -32,7 +34,6 @@ document.getElementById(`space2`).addEventListener(`click`, function () {
   }
 })
 
-
 document.getElementById(`space3`).addEventListener(`click`, function () {
   if (gridArea.dataset.turn === `playerOneTurn`) {
     alert("Jogador 1")
@@ -45,7 +46,6 @@ document.getElementById(`space3`).addEventListener(`click`, function () {
     gridArea.dataset.turn = "playerOneTurn"
   }
 })
-
 
 document.getElementById(`space4`).addEventListener(`click`, function () {
   if (gridArea.dataset.turn === `playerOneTurn`) {
@@ -60,7 +60,6 @@ document.getElementById(`space4`).addEventListener(`click`, function () {
   }
 })
 
-
 document.getElementById(`space5`).addEventListener(`click`, function () {
   if (gridArea.dataset.turn === `playerOneTurn`) {
     alert("Jogador 1")
@@ -73,7 +72,6 @@ document.getElementById(`space5`).addEventListener(`click`, function () {
     gridArea.dataset.turn = "playerOneTurn"
   }
 })
-
 
 document.getElementById(`space6`).addEventListener(`click`, function () {
   if (gridArea.dataset.turn === `playerOneTurn`) {
@@ -126,3 +124,19 @@ document.getElementById(`space9`).addEventListener(`click`, function () {
     gridArea.dataset.turn = "playerOneTurn"
   }
 })
+
+let dataSpace = document.querySelectorAll('[data-space]')
+// console.log(dataSpace)
+
+
+dataSpace.forEach(function (elemento) {
+  console.log(elemento.classList)
+}) /* Consigo pegar todas as classes através dod dataset, no entanto aparece a classe grid... e não as com classes desejadas xTurn e oTurn..  */
+
+
+
+
+
+
+// className traz o texto da classe escrito "normalmente"
+// classList traz a tag junto com texto 

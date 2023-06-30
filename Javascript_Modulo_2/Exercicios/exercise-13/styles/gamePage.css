@@ -8,8 +8,7 @@
   border: 3px dashed plum;
   border-radius: 8px;
   padding: 6px;
-  /* background-color: transparent; */
-
+  background-color: transparent;
 }
 
 header{
@@ -38,20 +37,16 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: 14px;
-  height: 50px; */
 }
 
 div img{
   width: 50px;
   height: 50px;
-
 }
 
 .container {
   padding-top: 10px;
   height: 85vh;
-  border: 2px solid green;
   display: flex;
   justify-content: space-around;
 }
@@ -67,7 +62,7 @@ div img{
 }
 
 .container .grid__areas{
-  text-align: center;
+  /* text-align: center; */
   background-color: bisque;
   background-image: url("../assets/Grid.svg");
   background-repeat: no-repeat;
@@ -83,11 +78,6 @@ div img{
   height: auto;
 }
 
-.container .grid .grid__areas--space{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .xTurn {
   background-image: url("../assets/X.svg");
