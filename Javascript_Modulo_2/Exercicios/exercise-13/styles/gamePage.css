@@ -75,9 +75,8 @@ div img{
   "space4 space5 space6"
   "space7 space8 space9";
   width: 550px;
-  height: auto;
+  /* height: auto; */
 }
-
 
 .xTurn {
   background-image: url("../assets/X.svg");
@@ -91,4 +90,8 @@ div img{
   background-repeat: no-repeat;
   background-position: center;
   background-size: 9em;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
