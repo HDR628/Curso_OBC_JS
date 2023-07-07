@@ -4,21 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../styles/homePage.css">
-  <title>Tic Tac Toe</title>
+  <title>Homepage - Tic Tac Toe</title>
 </head>
 <body>
   <div class="container">
     <h3>Tic Tac Toe</h3>
     
     <div class="players">
-      <!-- <label for="player player__one"></label> -->
     <input type="text" name="player player__one" id="player1" placeholder="Player 1">
-    <!-- <label for="player player__two"></label> -->
     <input type="text" name="player player__two" id="player2"  placeholder="Player 2" >
     </div>
     
     <div class="buttons">
-    <button type="button btn__play"><a href="../pages/gamePage.html"><img src="../assets/playButton.svg" alt="playButton"></a></button>
+    <button type="button btn__play" onclick="inputNameValues()"><a href="../pages/gamePage.html"><img src="../assets/playButton.svg" alt="playButton"></a></button>
     <button type="button btn__themeSwitcher" onclick="themeSwitch()"><img src="../assets/dark-mode-toggle-icon.svg" alt="dark-mode-toggle-icon"></button>
     </div>
   </div>

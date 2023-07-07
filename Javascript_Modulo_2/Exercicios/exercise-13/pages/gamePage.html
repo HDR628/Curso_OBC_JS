@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../styles/gamePage.css">
   <script defer src="../script.js"></script>
-  <title>Tic Tac Toe</title>
+  <title>Game - Tic Tac Toe</title>
 </head>
 <body>
   <header>
@@ -25,7 +25,9 @@
   <div class="container" >
     
     <div class="player player__One">
-      <h2>Player 1</h2>
+      <!-- <h2 id="playerOne"></h2> -->
+      <h2><span id="player1Value"></span></h2>
+
       <img src="../assets/X.svg" alt="letter X">
     </div>    
     <div class="grid grid__areas" id="gridArea" data-turn="playerOneTurn">
@@ -40,10 +42,14 @@
       <span class="cursor-pointer" id="space9" data-region="2.2"></span>
     </div>
     <div class="player player__Two">
-      <h2>Player 2</h2>
+      <!-- <h2 id="playerTwo"></h2> -->
+      <h2><span id="player2Value"></span></h2>
       <img src="../assets/O.svg" alt="Letter O">
     </div>
-    <!-- <button id="start">Começar!</button> -->
   </div>
+  <script>
+    document.getElementById("player1Value").textContent = localStorage.getItem("player1");
+    document.getElementById("player2Value").textContent = localStorage.getItem("player2");
+  </script>
 </body>
 </html>

@@ -1,3 +1,13 @@
+function inputNameValues() {
+  var player1Value = document.getElementById("player1").value;
+  var player2Value = document.getElementById("player2").value;
+
+  localStorage.setItem("player1", player1Value);
+  localStorage.setItem("player2", player2Value);
+
+  window.location.href = "../pages/gamePage.html";
+}
+
 let copyArray = [['', '', ''], ['', '', ''], ['', '', '']] /* Criação de um array virtual para visualizar no console/js */
 
 let gameBoard = document.querySelectorAll(`#gridArea span`)/* Pega todas as regiões utilizados no jogo */
@@ -84,10 +94,8 @@ gameBoard.forEach(function (element) {
       // console.table(copyArray)
       switchPlayer()
     }
-
     let winner = getWinRegions()
     console.log(winner + gridArea.dataset.turn)
-
   })
 })
 
