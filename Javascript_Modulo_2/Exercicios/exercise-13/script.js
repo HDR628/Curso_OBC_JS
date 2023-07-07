@@ -1,69 +1,42 @@
-/* 
-[X] Como saber o turno de cada jogador ? Resolução temporario e ir pelo data-turn atrelado ao container de grid
-[X] Como capturar o elemento/espaço a ser usado ?  Utilização do addEventListener 
-[X] Como passar/criar a imagem a partir do clique do usuário ? Foi adicionado classes aos respectivos cliques do usuários baseados no data-turn
-[x] Criação de uma função/iteração que passe por todos os espaços e realize as funções abaixo da mesma forma 
-[ ] Como identificar/checar o vencedor ?
-[ ] Verificar se elemento/espaço está vazio ou preenchido 
-*/
+let copyArray = [['', '', ''], ['', '', ''], ['', '', '']] /* Criação de um array virtual para visualizar no console/js */
 
-let copyArray = [['', '', ''], ['', '', ''], ['', '', '']]
+let gameBoard = document.querySelectorAll(`#gridArea span`)/* Pega todas as regiões utilizados no jogo */
 
-let gameBoard = document.querySelectorAll(`#gridArea span`)
-// console.log(gameBoard)
+function switchPlayer() {
+  let playerAtual = document.getElementById(`gridArea`)
+  if (playerAtual.dataset.turn === 'playerOneTurn') {
+    playerAtual.dataset.turn = `playerTwoTurn`
+  } else if (playerAtual.dataset.turn === 'playerTwoTurn') {
+    playerAtual.dataset.turn = 'playerOneTurn'
+  }
+}
+
+let winChances = [
+  /* Horizontal */
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  /* Vertical */
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  /* Diagonal */
+  [0, 4, 8],
+  [2, 4, 6]
+] /* Combinações que checam/validam o vencedor do jogo */
 
 
 gameBoard.forEach(function (element) {
-  element.addEventListener('click', function (ev) {
+  element.addEventListener('click', function () {
     if (gridArea.dataset.turn == 'playerOneTurn') {
-      alert('Jogador 1')
       element.classList = 'xTurn'
-      gridArea.dataset.turn = 'playerTwoTurn'
-      // element.removeEventListener(`click`) não funciona🥲
-
+      console.log(copyArray)
+      switchPlayer()
     } else if (gridArea.dataset.turn === 'playerTwoTurn') {
-      alert("Jogador 2")
       element.classList = "oTurn"
-      gridArea.dataset.turn = "playerOneTurn"
+      console.log(copyArray)
+      switchPlayer()
     }
   })
 })
-
-
-
-
-
-// let dataSpace = document.querySelectorAll('[data-space]')
-// console.log(dataSpace)
-
-
-
-
-
-
-
-
-/* possibilidades de ganhar:
-  horizontal
-  1-2-3
-  4-5-6
-  7-8-9
-  vertical
-  1-4-7
-  258
-  369
-  Diagonal
-  159
-  357
-*/
-
-
-
-
-/* dataSpace.forEach(function (elemento) {
-  console.log(elemento.classList)
-})  Consigo pegar todas as classes através dod dataset, no entanto aparece a classe grid... e não as com classes desejadas xTurn e oTurn..  */
-
-// className traz o texto da classe escrito "normalmente"
-// classList traz a tag junto com texto 
 

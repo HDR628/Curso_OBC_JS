@@ -4,11 +4,15 @@
   box-sizing: border-box;
 }
 
-* button{
+button{
   border: 3px dashed plum;
   border-radius: 8px;
   padding: 6px;
   background-color: transparent;
+}
+
+#start{
+  background-color: #25a340;
 }
 
 header{
@@ -92,6 +96,10 @@ div img{
   background-size: 9em;
 }
 
-.cursor-pointer {
-  cursor: pointer;
+span {
+  cursor: pointer ;
+}
+
+#gridArea span.win {
+  background-color: #25a340;
 }
