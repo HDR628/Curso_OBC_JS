@@ -65,6 +65,11 @@ function getWinRegions() {
   }
 }
 
+function showWinner(regions) { /* O paramento utilizado irá pegar as regiões pegas no getWinRegions e pinta-las */
+  regions.forEach(function (region) { /* Ira passar por cada elemento pego do getWinRegions(o return da função) e pinta-las */
+    document.querySelector('[data-region="' + region + '"]').classList.add('win') /* Adição da classe que pinta os elementos/regions presente no css */
+  })
+}
 
 gameBoard.forEach(function (element) {
   element.addEventListener('click', function (ev) {
@@ -95,7 +100,14 @@ gameBoard.forEach(function (element) {
       switchPlayer()
     }
     let winner = getWinRegions()
-    console.log(winner + gridArea.dataset.turn)
+    if (winner.length > 0) {
+      showWinner(winner)
+    } else if (copyArray.flat().includes('')) {
+      let playerNow = gridArea.dataset.turn
+      playerNow = playerNow === 'playerOneTurn' ? 'playerTwoTurn' : 'playerOneTurn'
+    } else {
+      alert('Empate!')
+    }
   })
 })
 
