@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,500&display=swap");
 /* Global */
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 } /* Reset browser styles */
@@ -21,7 +21,6 @@
   text-transform: uppercase;
   background-color: #ed4d1b;
   border: 2px solid black;
-  /* box-shadow: 4px 4px 0px 0px ; */
   -webkit-box-shadow: 4px 4px 6px 0px #1e1e1e;
   -moz-box-shadow: 4px 4px 6px 0px #1e1e1e;
   box-shadow: 4px 4px 6px 0px #1e1e1e;
@@ -40,7 +39,6 @@
   align-items: center;
   padding: 2rem;
   margin: 1rem;
-  border: 1px solid black;
 }
 
 .links {
@@ -56,10 +54,13 @@
   text-decoration: none;
 }
 
+/* Hero-section */
+
 .hero {
   margin: 1rem;
-  border: 1px solid black;
   text-align: left;
+  padding-left: 24px;
+  padding-right: 24px;
   padding-bottom: 16rem;
 }
 
@@ -82,4 +83,115 @@
 .hero img {
   height: 220px;
   width: 100%;
+}
+
+/* Courses section */
+
+.courses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px 16px;
+}
+
+.cardCourses {
+  background-color: #ed4d1b;
+  border: 2px solid black;
+  -webkit-box-shadow: 4px 4px 6px 0px #1e1e1e;
+  -moz-box-shadow: 4px 4px 6px 0px #1e1e1e;
+  max-width: 17rem;
+  padding: 2rem 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 20px;
+}
+
+.cardCourses img {
+  width: 48px;
+  height: 48px;
+}
+
+.cardCourses p {
+  font-size: 16px;
+}
+
+.cardCourses a {
+  display: flex;
+  justify-content: end;
+}
+
+.cardCourses:nth-child(2n) {
+  align-self: end;
+  background-color: var(--secondary-color);
+}
+
+div > h1 {
+  font-size: 40px;
+  margin-bottom: 32px;
+}
+
+.moreContent {
+  width: 281px;
+  height: 127px;
+  padding-bottom: 16rem;
+}
+
+.text-align {
+  text-align: center;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 16px;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 24px;
+}
+
+.textContent > img {
+  width: 106px;
+  height: 53px;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 16px 24px;
+}
+
+form {
+  padding: 16px 24px;
+}
+
+form h3 {
+  font-size: 24px;
+}
+
+.emailInput {
+  background-color: white;
+  border: 2px solid black;
+  -webkit-box-shadow: 4px 4px 6px 0px #1e1e1e;
+  -moz-box-shadow: 4px 4px 6px 0px #1e1e1e;
+  box-shadow: 4px 4px 6px 0px #1e1e1e;
+  padding: 13px;
+  width: 272px;
+  height: 48px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.header,
+.hero,
+.courses,
+.contact {
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
 }
