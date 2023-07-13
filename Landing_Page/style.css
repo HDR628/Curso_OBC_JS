@@ -1,6 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,500&display=swap");
+/* Global */
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  background-color: bisque;
+  font-family: "Roboto", sans-serif;
 } /* Reset browser styles */
+
+/* Criação de variáveis padrões */
+:root {
+  --primary-color: #ed4d1b;
+  --secondary-color: #ff9a3c;
+  --text-black: #000;
+}
+
+* button {
+  cursor: pointer;
+  color: #000;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #ed4d1b;
+  border: 2px solid black;
+  /* box-shadow: 4px 4px 0px 0px ; */
+  -webkit-box-shadow: 4px 4px 6px 0px #1e1e1e;
+  -moz-box-shadow: 4px 4px 6px 0px #1e1e1e;
+  box-shadow: 4px 4px 6px 0px #1e1e1e;
+  padding: 13px;
+  width: 200px;
+  height: 48px;
+}
+
+* span {
+  color: var(--primary-color);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  margin: 1rem;
+  border: 1px solid black;
+}
+
+.links {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 1rem 0;
+  gap: 1rem;
+}
+
+.links a {
+  color: var(--text-black);
+  text-decoration: none;
+}
+
+.hero {
+  margin: 1rem;
+  border: 1px solid black;
+  text-align: left;
+  padding-bottom: 16rem;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 900;
+  padding-top: 2rem;
+}
+
+.hero p {
+  padding-top: 2rem;
+  font-size: 20px;
+  line-height: 22px;
+}
+
+.hero button {
+  margin-top: 2rem;
+}
+
+.hero img {
+  height: 220px;
+  width: 100%;
+}
