@@ -92,10 +92,22 @@
   flex-direction: column;
   align-items: center;
   margin: 0px 16px;
+  padding-bottom: 8rem;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.25rem;
+  margin-top: -8rem;
+  margin-bottom: 4rem;
 }
 
 .cardCourses {
-  background-color: #ed4d1b;
+  background-color: var(--primary-color);
+  max-width: 17rem;
+  padding: 2rem 0 0 2rem;
   border: 2px solid black;
   -webkit-box-shadow: 4px 4px 6px 0px #1e1e1e;
   -moz-box-shadow: 4px 4px 6px 0px #1e1e1e;
@@ -117,8 +129,9 @@
 }
 
 .cardCourses a {
-  display: flex;
-  justify-content: end;
+  display: block;
+  margin: 3rem 0 0 auto;
+  width: fit-content;
 }
 
 .cardCourses:nth-child(2n) {
