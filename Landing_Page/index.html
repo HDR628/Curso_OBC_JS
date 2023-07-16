@@ -2,106 +2,152 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Tom's Jazz School</title>
-    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <header class="header">
-      <img src="./assets/logo.svg" alt="logo from Tom's Jazz School" />
-      <nav>
-        <div class="links">
-          <a href="">Inicio</a>
-          <a href="">Cursos</a>
-          <a href="">Eventos</a>
-          <a href="">Contato</a>
-        </div>
-      </nav>
-      <button type="button" class="">Se inscreva</button>
+    <header>
+      <div class="container">
+        <img src="./assets/logo.svg" alt="Tom's Jazz School Logo" />
+        <nav class="">
+          <a href="#">Início</a>
+          <a href="#">Cursos</a>
+          <a href="#">Eventos</a>
+          <a href="#">Contato</a>
+        </nav>
+        <a href="#" class="button mt-1 mb-1 mx-auto">Se inscreva</a>
+      </div>
     </header>
-    <main class="container">
-      <section class="hero">
-        <img src="./assets/hero-img.svg" alt="Three people playing Jazz" />
-        <div class="heroTextContent">
-          <h1>Crie algo <span> impactante </span>com música</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-          <button type="button" class="">COMECE AGORA</button>
+    <main>
+      <section class="hero-section">
+        <div class="container row-reverse">
+          <img
+            src="./assets/hero-img.svg"
+            alt="Desenho de homens tocando piano"
+          />
+          <div>
+            <h1 class="mt-2">
+              Crie algo
+              <span class="text-primary decoration">impactante</span> com música
+            </h1>
+            <p class="mt-2 mb-2">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos quos
+              natus culpa quas! Rem tempora quod iste earum ullam ut,
+              repudiandae sit optio soluta delectus veritatis voluptates vero
+              illum molestiae?
+            </p>
+            <a href="" class="button">Comece agora</a>
+          </div>
         </div>
       </section>
-      <section class="courses">
+      <section class="courses-section">
         <div class="cards">
-          <div class="cardCourses">
+          <article class="card">
             <img src="./assets/piano.png" alt="piano" />
-            <h3>Piano Popular</h3>
+            <strong>Piano popular</strong>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui animi
-              magni non exercitationem, doloremque eos!
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque
+              in perspiciatis saepe odio atque consequatur molestiae repellendus
+              tempora magnam numquam officiis molestias, nam tenetur, sunt omnis
+              aliquid maxime explicabo quidem.
             </p>
-            <a href="#">
-              <img src="./assets/arrow-right.svg" alt="" />
+            <a href="">
+              <img
+                src="./assets/arrow-right.svg"
+                alt="seta apontada para a direita"
+              />
             </a>
-          </div>
-          <div class="cardCourses ">
-            <img src="./assets/clef.png" alt="clef" />
-            <h3>Teoria musical</h3>
+          </article>
+          <article class="card">
+            <img src="./assets/clef.png" alt="" />
+            <strong>Teoria musical</strong>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui animi
-              magni non exercitationem, doloremque eos!
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque
+              in perspiciatis saepe odio atque consequatur molestiae repellendus
+              tempora magnam numquam officiis molestias, nam tenetur, sunt omnis
+              aliquid maxime explicabo quidem.
             </p>
-            <a href="#">
-              <img src="./assets/arrow-right.svg" alt="" />
+            <a href="">
+              <img
+                src="./assets/arrow-right.svg"
+                alt="seta apontada para direita"
+              />
             </a>
-          </div>
-          <div class="cardCourses">
-            <img src="./assets/sax.png" alt="sax" />
-            <h3>Sax alto</h3>
+          </article>
+          <article class="card">
+            <img src="./assets/sax.png" alt="saxofone" />
+            <strong>Sax alto</strong>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui animi
-              magni non exercitationem, doloremque eos!
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque
+              in perspiciatis saepe odio atque consequatur molestiae repellendus
+              tempora magnam numquam officiis molestias, nam tenetur, sunt omnis
+              aliquid maxime explicabo quidem.
             </p>
-            <a href="#">
-              <img src="./assets/arrow-right.svg" alt="" />
+            <a href="">
+              <img
+                src="./assets/arrow-right.svg"
+                alt="seta apontada para direita"
+              />
             </a>
-          </div>
-          <div class="cardCourses ">
+          </article>
+          <article class="card">
             <img src="./assets/drums.png" alt="bateria" />
-            <h3>Bateria</h3>
+            <strong>Bateria</strong>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui animi
-              magni non exercitationem, doloremque eos!
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque
+              in perspiciatis saepe odio atque consequatur molestiae repellendus
+              tempora magnam numquam officiis molestias, nam tenetur, sunt omnis
+              aliquid maxime explicabo quidem.
             </p>
-            <a href="#">
-              <img src="./assets/arrow-right.svg" alt="" />
+            <a href="">
+              <img
+                src="./assets/arrow-right.svg"
+                alt="seta apontada para direita"
+              />
             </a>
-          </div>
-          <div class="moreContent text-align">
-            <h1>E <span>vários</span> outros</h1>
-            <button>Conhecer cursos</button>
-          </div>
+          </article>
         </div>
-        
+
+        <h2 class="text-center mt-2 mb-2 mx-auto">
+          E <span class="text-primary">vários</span> outros!
+        </h2>
+        <a href="#" class="button mx-auto">Conhecer cursos</a>
       </section>
     </main>
     <footer>
-      <div class="contact">
-        <div class="textContent">
-          <img src="./assets/logo.svg"></img>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, repudiandae temporibus facere nulla voluptas odio cum deserunt maiores amet mollitia.</p>
+      <div class="container">
+        <div class="about-column">
+          <img src="./assets/logo.svg" alt="Tom's Jazz School logo" />
+          <p class="mt-2">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam
+            sapiente numquam sit obcaecati praesentium sint commodi! Eum,
+            facilis distinctio? Quidem quae dolorum dolore repellat beatae
+            consectetur nulla, nam reprehenderit. Voluptas.
+          </p>
         </div>
-      <div class="navigation">   
-        <div>Inicio</div>
-        <div>Cursos</div>
-        <div>Eventos</div>
-        <div>Contato</div>
+        <nav class="mt-2 mb-2">
+          <a href="">Início</a>
+          <a href="">Cursos</a>
+          <a href="">Eventos</a>
+          <a href="">Contato</a>
+        </nav>
+        <form action="" class="newsletter-form">
+          <label for="email">Receba materiais gratuitos no seu email</label>
+          <input type="email" id="email" class="mt-1" />
+          <button type="submit" class="button mt-1">QUERO RECEBER</button>
+        </form>
       </div>
-      <form>
-        <h3>Receba materiais gratuitos no seu email</h3>
-        <input type="email" class="emailInput" placeholder="example@gmail.com">
-        <button type="button">QUERO RECEBER</button>
-      </form>
-    </section></footer>
+    </footer>
   </body>
 </html>
