@@ -1,50 +1,51 @@
-const mediaSimples = (...numbers) => {
+const average = (...numbers) => {
   let sumNumber = numbers.reduce((acc, num) => acc += num, 0)
   return sumNumber / numbers.length
 }
 
 // console.log(mediaSimples(4, 3, 3, 4))
 
-/* media ponderada, receber o numero e dps o valor/peso desse mesmo, apos isso multiplicar peso*nume/ soma dos pesos  */
 
+/* Media Ponderada  */
 const weightedAverage = (...entries) => {
+  /* acumulador {numero , peso} => retorna o reduce + acumulador(verificando tbm se o peso existe,caso nao utilizasse o 1 ...) */
   const sum = entries.reduce((accum, { number, weight }) => accum + (number * (weight ?? 1)), 0)
   const weightSum = entries.reduce((accum, entry) => accum + (entry.weight ?? 1), 0)
   return sum / weightSum
 }
 
-console.log(`Média Ponderada: ${weightedAverage(
+/* console.log(`Média Ponderada: ${weightedAverage(
   { number: 9, weight: 3 },
   { number: 7 },
   { number: 10, weight: 1 },
-)}`)
+)}`) */
 
-
-////////////////
+/* Função da Mediana */
 
 const median = (...numbers) => {
+  /* copia do array numbers/parâmetros e posto em ordem método sort */
   const orderedNumbers = [...numbers].sort((a, b) => a - b)
+
+  /* variável criada para achar meio do array, basicamente checa se e impar ou par o tamanho, alias caso o numero passado possuir virgula nao ocorrera problema devido ao método floor presente que pega apenas" números inteiros" */
   const middle = Math.floor(orderedNumbers.length / 2)
   if (orderedNumbers.length % 2 !== 0) {
     return orderedNumbers[middle]
   }
-  const firstMedian = orderedNumbers[middle - 1]
+  const firstMedian = orderedNumbers[middle - 1];
   const secondMedian = orderedNumbers[middle]
   return average(firstMedian, secondMedian)
 }
 
-console.log(`Mediana: ${median(2, 5, 99, 4, 42, 7)}`)
-console.log(`Mediana: ${median(15, 14, 8, 7, 3)}`)
+// console.log(`Mediana: ${median(2, 5, 99, 4, 42, 7)}`)
+// console.log(`Mediana: ${median(15, 14, 8, 7, 3)}`)
 
 
-/////////////
+/* Função da Moda */
 
 const mode = (...numbers) => {
   // [ [n, qtd], [n, qtd], [n, qtd] ]
-  const quantities = numbers.map(num => [
-    num,
-    numbers.filter(n => num === n).length
-  ])
+  const quantities = numbers.map(num =>
+    [num, numbers.filter(n => num === n).length])
   quantities.sort((a, b) => b[1] - a[1])
   return quantities[0][0]
 }
