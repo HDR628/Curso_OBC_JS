@@ -1,9 +1,27 @@
 const dayjs = require("dayjs")
 
-// function giveMeDate(day,month,year){
-//     let day = parseInt(day)
-//     let month = parseInt(month)
-//     let year = parseInt(year)      }
+const dateNow = dayjs()
+
+let dia = dateNow.date()
+console.log(dia)
+console.log(dateNow.month())
+
+
+/* function giveMeDate(day,month,year){
+
+    day = dayjs().day
+    month = dayjs().month
+    year = dayjs().year
+
+    console.log(`
+        ${dateNow}
+        ${day}
+        ${month}
+        ${year}
+        `)
+
+}
+    giveMeDate(28,8,2024) */
 
 // console.log(dayjs) // vai me retornar um objeto com todos os dados da data atual
 
@@ -18,9 +36,8 @@ Dessa forma e retornado o objeto/data do dayjs com o valor adicionado pelo metod
 // let hour = dayjs().hour()
 // console.log(`Hora atual: ${hour}`)
 
-console.log(dayjs().get('date'))
-console.log(dayjs().get('year'))
-console.log(dayjs().get('month'))
-
+// console.log(dayjs().get('date'))
+// console.log(dayjs().get('year'))
+// console.log(dayjs().get('month'))
 
 
