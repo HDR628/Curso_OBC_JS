@@ -6,23 +6,44 @@ function giveMeDate(day,month,year){
 
 const dateNow = dayjs()
 
- day = dateNow.date()
- month = dateNow.month()
- year = dayjs().year()  /* Posso obter tanto ta copia do objeto dayJs como posso utilizar ele diretamente. Se for algo simples parece mais interessante utiliza-lo diretamente, mas caso deseje mais organização e bom separar e criar novas variaveis para receber os dados/chaves do dayJs/biblioteca do npm */
+ day = day
+ month = month
+ year = year  /* Posso obter tanto ta copia do objeto dayJs como posso utilizar ele diretamente. Se for algo simples parece mais interessante utiliza-lo diretamente, mas caso deseje mais organização e bom separar e criar novas variaveis para receber os dados/cahaves do dayJs/biblioteca do npm */
+
+ let birthYearDay = day.toString()
+ let birthMonth = month.toString()
+ let birthYear = year.toString()
+// //  birthYearDay.toString()
+//  birthMonth.toString()
+//  birthYear.toString()
+
+ let resultDate = birthYearDay.concat('-',birthMonth,"-",birthYear)
+ console.log(resultDate)
+
+//  console.log(dateNow) 
+ console.log(birthYearDay,birthMonth,birthYear)
+
+
+
 
 let oneYearFuture = dateNow.add(1,'year').format('DD/MM/YYYY')  /* obtendo data futura do aniversario da pessoa  */
 
 
+console.log(dateNow.diff(birthYear,'year'))      
+
+/*  
 console.log(`
 ${dateNow}
 ${day}
 ${month}
 ${year}
 ${oneYearFuture}
-`)
+Idade atual: ${ageNow}
+
+`)*/
 
 }
-giveMeDate(28,8,2024)
+giveMeDate(25,6,2003)
 
 // console.log(dayjs) // vai me retornar um objeto com todos os dados da data atual
 
