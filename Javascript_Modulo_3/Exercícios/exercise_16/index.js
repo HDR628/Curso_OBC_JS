@@ -1,72 +1,68 @@
+/* 
+TODO
+[x] - função que recebe data de nascimento
+[x] - idade atual
+[x] - proxima data formatada (dd/mm/yyyy)
+[] - quantos dias faltam para o proximo aniversario
+  
+*/
+
+/* Requires of modules */
 const dayjs = require("dayjs")
 const customParseFormat = require("dayjs/plugin/customParseFormat");
 dayjs.extend(customParseFormat)
 
-function giveMeDate(day,month,year){
+/* Create function */
+function dateBirth(day,month,year){
 
-const dateNow = dayjs()
+const dateNow = dayjs() // data atual
 
- day = day
- month = month
- year = year  /* Posso obter tanto ta copia do objeto dayJs como posso utilizar ele diretamente. Se for algo simples parece mais interessante utiliza-lo diretamente, mas caso deseje mais organização e bom separar e criar novas variaveis para receber os dados/cahaves do dayJs/biblioteca do npm */
+/* Data de nascimento - info */
+day = day
+month = month
+year = year
 
- let birthYearDay = day.toString()
- let birthMonth = month.toString()
- let birthYear = year.toString()
-// //  birthYearDay.toString()
-//  birthMonth.toString()
-//  birthYear.toString()
+/* Transformando em string e concatenando */
+birthDay = day.toString()
+birthMonth = month.toString()
+birthYear = year.toString()
 
- let resultDate = birthYearDay.concat('-',birthMonth,"-",birthYear)
- console.log(resultDate)
+// let concatDate = birthDay.concat('/',birthMonth,'/',birthYear) /* O dayJs interpreta/dividi as datas dessa forma e reconhece os caracteres: - ; / como "divisão" */
 
-//  console.log(dateNow) 
- console.log(birthYearDay,birthMonth,birthYear)
+/* Obter a data que caira o aniversario no ano seguinte */
 
-
-
-
-let oneYearFuture = dateNow.add(1,'year').format('DD/MM/YYYY')  /* obtendo data futura do aniversario da pessoa  */
+if(month < 10){
+    month = "0" + month
+}
 
 
-console.log(dateNow.diff(birthYear,'year'))      
+let concatFormmated = (day + "/" + month + "/" + dateNow.$y)
+let paramsToDayjs = dayjs(concatFormmated,'DD/MM/YYYY'); /* Transformando os paramentros por algo semelhante/data ao dayJs para que seja possivel interpretrar e adicionar e formatar com mais facilidade */ 
+/* let oneYearFuture = dayjs(dateNow.day(day),dateNow.month(birthMonth),dateNow.add(1,"year")) */
+let oneYearFuture = dayjs(paramsToDayjs.add(1,"year")).format("DD/MM/YYYY") 
 
-/*  
-console.log(`
-${dateNow}
-${day}
-${month}
-${year}
-${oneYearFuture}
-Idade atual: ${ageNow}
+console.log(`Concat Formmated = ${concatFormmated}`)
+console.log(`paramns to dayjs = ${paramsToDayjs.format("DD/MM/YYYY")}`)
+console.log(`one year future = ${oneYearFuture}`)
 
-`)*/
+// console.log(paramsToDayjs) /* Teste para saber se esta saindo a data correta */
+
+/* Calculando os dias restantes para o proximo aniversario */
+
+// data1anoAFrente - dataAtual
+
+console.log(oneYearFuture)
+console.log(typeof(oneYearFuture))
+
+let yearFutere = dayjs(oneYearFuture)
+console.log(yearFutere)
+console.log(typeof(yearFutere))
+
+console.log(yearFutere.diff(dateNow,'day'))
+
+console.log(typeof(dateNow))
+
+
 
 }
-giveMeDate(25,6,2003)
-
-// console.log(dayjs) // vai me retornar um objeto com todos os dados da data atual
-
-/* const a = dayjs()
-const b = a.add(2, `year`)
-console.log(a)
-console.log(b)
-
-Dessa forma e retornado o objeto/data do dayjs com o valor adicionado pelo metodo add presente no npm...Respectivamento pelo numero desejado(no caso foi anos 2)e logo apos o que voce deseja adicionar desde a data atual(no caso foi ano/year)
-*/
-
-// let hour = dayjs().hour()
-// console.log(`Hora atual: ${hour}`)
-
-// console.log(dayjs().get('date'))
-// console.log(dayjs().get('year'))
-// console.log(dayjs().get('month'))
-
-
-/*
-    Pegando os dados
-const dateNow = dayjs()
-
-let dia = dateNow.date()
-console.log(dia)
-console.log(dateNow.month()) */
+dateBirth(25,6,2003)
