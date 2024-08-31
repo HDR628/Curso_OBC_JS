@@ -1,68 +1,54 @@
-/* 
-TODO
+/* TODO
 [x] - função que recebe data de nascimento
 [x] - idade atual
 [x] - proxima data formatada (dd/mm/yyyy)
-[] - quantos dias faltam para o proximo aniversario
-  
+[x] - quantos dias faltam para o proximo aniversario
 */
 
 /* Requires of modules */
 const dayjs = require("dayjs")
 const customParseFormat = require("dayjs/plugin/customParseFormat");
 dayjs.extend(customParseFormat)
+/* const localeBr = require("./node_modules/dayjs/locale/br")
+dayjs.locale(localeBr) */
 
 /* Create function */
 function dateBirth(day,month,year){
 
 const dateNow = dayjs() // data atual
 
-/* Data de nascimento - info */
-day = day
-month = month
-year = year
-
-/* Transformando em string e concatenando */
-birthDay = day.toString()
-birthMonth = month.toString()
-birthYear = year.toString()
-
-// let concatDate = birthDay.concat('/',birthMonth,'/',birthYear) /* O dayJs interpreta/dividi as datas dessa forma e reconhece os caracteres: - ; / como "divisão" */
-
-/* Obter a data que caira o aniversario no ano seguinte */
-
+/* Adicionando 0 na frente do parametro passado(caso for menor que 10.Para posteriormente não dar erro na formatação) */
 if(month < 10){
     month = "0" + month
 }
 
+/* Criar data de nascimento */
+let birthday = dayjs(`${day}/${month}/${year}`,"DD/MM/YYYY")
+// console.log(birthday)
 
-let concatFormmated = (day + "/" + month + "/" + dateNow.$y)
-let paramsToDayjs = dayjs(concatFormmated,'DD/MM/YYYY'); /* Transformando os paramentros por algo semelhante/data ao dayJs para que seja possivel interpretrar e adicionar e formatar com mais facilidade */ 
-/* let oneYearFuture = dayjs(dateNow.day(day),dateNow.month(birthMonth),dateNow.add(1,"year")) */
-let oneYearFuture = dayjs(paramsToDayjs.add(1,"year")).format("DD/MM/YYYY") 
+/* Criação do aniversario atual, para posterior adição e contagem de dias */
+let birthdayThisYear = dayjs(`${day}/${month}/${dateNow.year()}`,"DD/MM/YYYY")
+// console.log(birthdayThisYear)
 
-console.log(`Concat Formmated = ${concatFormmated}`)
-console.log(`paramns to dayjs = ${paramsToDayjs.format("DD/MM/YYYY")}`)
-console.log(`one year future = ${oneYearFuture}`)
+/* Descobrindo a idade atual */
+let idadeAtual = birthdayThisYear.diff(birthday,"year")
+// console.log(idadeAtual)
 
-// console.log(paramsToDayjs) /* Teste para saber se esta saindo a data correta */
+/* Proxima data de aniversario, formatada */
+let nextBirthday = birthdayThisYear.add(1,"year").format("DD/MM/YYYY")
+// console.log(nextBirthday)
 
-/* Calculando os dias restantes para o proximo aniversario */
+/* Quantos dias faltam para o proximo aniversario ? */
 
-// data1anoAFrente - dataAtual
+let convertNext = dayjs(`${nextBirthday}`,"DD/MM/YYYY")
+const diffDays = convertNext.diff(dateNow, 'day');
+// console.log(diffDays)
 
-console.log(oneYearFuture)
-console.log(typeof(oneYearFuture))
-
-let yearFutere = dayjs(oneYearFuture)
-console.log(yearFutere)
-console.log(typeof(yearFutere))
-
-console.log(yearFutere.diff(dateNow,'day'))
-
-console.log(typeof(dateNow))
-
-
+/* Exibição no terminal */
+console.log(`
+    Idade atual: ${idadeAtual}
+    Proximo aniversario: ${nextBirthday}
+    Quantos dias para o proximo aniversario: ${diffDays}  `)
 
 }
 dateBirth(25,6,2003)
