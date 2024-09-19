@@ -1,21 +1,18 @@
-const path = require("path")
-
 module.exports = {
     entry: {
       index: './src/index.js'
     },
     output: {
         filename:"[name].min.js",
-        path: path.resolve(__dirname,"dist")
     },
-    mode: 'development',
+    mode: 'production',
     module: {
-        rules: {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
-        },
-    },
-    plugins: [
-      
-    ]
+       rules: [{
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
+        }, {
+             test: /\.js$/,
+            use: ['babel-loader']
+          }]
+    }
   }
