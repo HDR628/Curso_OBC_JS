@@ -13,7 +13,7 @@ class Book  {
 const eragon = new Book("Eragon")
 const toradora = new Book("Tiger")
 
-// criando metodo published
+// criando/chamando metodo published
 toradora.publish()
 
 console.log(eragon)
