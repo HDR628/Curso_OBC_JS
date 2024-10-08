@@ -1,5 +1,5 @@
 class Product {
-    constructor(name, description,price,instock){
+    constructor(name, description,price){
         this.name = name
         this.description = description
         this.price = price
@@ -7,7 +7,7 @@ class Product {
     }
 
     addToStock(quantity){
-        this.instock =+ quantity
+        this.instock += quantity
         console.log(this.instock)
     }
 
