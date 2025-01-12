@@ -1,6 +1,6 @@
-import {Character} from "./Character"
+const Character = require("./Character");
 
-class Warrior extends Character {
+module.exports = class Warrior extends Character {
     constructor(name,lifePoints,attack,defense,shield,position){
         super(name,lifePoints,attack,defense)
         this.shield = shield
@@ -8,7 +8,7 @@ class Warrior extends Character {
     }
 
     targetCharacter(target){
-        if(this.position == defense){
+        if(this.position == "defesa"){
             console.log("Não e possivel atacar no momento")
         }else{
             let damageLevel = this.attack - target.defense
