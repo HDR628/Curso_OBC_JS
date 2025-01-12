@@ -30,4 +30,22 @@ class Airplane extends Vehicle {
 }
 
 const honda = new Car()
-const 
+const caloi = new Bike()
+const ship = new Ship()
+const boing = new Airplane()
+
+honda.move()
+caloi.move()
+ship.move()
+boing.move()
+
+/* Utilizando uma função pra chamar o move tbm funciona */
+
+function engineStart(Vehicle){
+    console.log("Start Engine")
+    move(Vehicle){
+        console.log("Veiculo iniciado")
+    }
+}
+
+engineStart(boing)
