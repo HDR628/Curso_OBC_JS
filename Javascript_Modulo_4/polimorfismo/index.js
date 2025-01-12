@@ -43,9 +43,12 @@ boing.move()
 
 function engineStart(Vehicle){
     console.log("Start Engine")
-    move(Vehicle){
+    Vehicle.move()    
+    /* move(Vehicle){
         console.log("Veiculo iniciado")
     }
+    Da erro assim kkk    
+    */
 }
 
 engineStart(boing)
