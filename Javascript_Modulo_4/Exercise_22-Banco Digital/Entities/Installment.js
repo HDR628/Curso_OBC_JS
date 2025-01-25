@@ -1,7 +1,7 @@
 module.exports = class Installment {
-    constructor(valueParcel,numberParcel,statusParcel){
+    constructor(valueParcel,numberParcel){
         this.valueParcel = valueParcel
         this.numberParcel = numberParcel
-        this.statusParcel = statusParcel
+        this.status = "pending"
     }
 } 
