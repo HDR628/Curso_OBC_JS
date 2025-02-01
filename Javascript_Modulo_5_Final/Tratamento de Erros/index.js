@@ -1,5 +1,5 @@
 function sum(a, b) {
-    const firstNumber = Number(a)/* Transformar em numeros */
+    const firstNumber = Number(a)/* Transformar em números */
     const secondNumber = Number(b)
 
     if (isNaN(firstNumber) || isNaN(secondNumber)) {
@@ -14,7 +14,7 @@ try {
     console.log(sum(true, 14))
     console.log(sum(undefined, 22)) /* Da erro */
     console.log(sum(18, "0"))
-    console.log(sum(39, null)) 
+    console.log(sum(39, null))
     // console.log(sum(13, "zero"))   /* Da erro */
 } catch (error) {    /* O catch presente facilita a visualização do erro e a mensagem passada(no throw error acima) */
     console.log("An error ocurred!")
