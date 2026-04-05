@@ -82,7 +82,7 @@ getAge("2006-09-29")
 function groupMembers(group) {
   return new Promise((resolve, reject) => {
     if (typeof group !== "number" || group <= 0) {
-      reject("O grupo deve ser um numero e maior que 0"); // Mostrando como sting
+      reject(new Error("O grupo deve ser um numero e maior que 0")); // Mostrando como sting
     } else {
       resolve(group); /* Passei a qtd de pessoas no grupo */
     }
@@ -106,7 +106,7 @@ groupMembers(4) //Cheancando o numero de pessoas no grupo
   .then((groupSize) => {
     // Passei o numero de pessoas para a prox função, no caso calculateBill, que necessita dos parametros value e groupSize...Caso os dois passsem e sejam numeros validos, caimos no bloco de codigo resolve dentro do
     // do calculateBill, onde temos o valor/calculo por pessoa
-    return calculateBill(400, groupSize);
+    return calculateBill(400, groupSize);  /* Como posso passar o valor da conta sem ser uma constante/elemento fixo?  */
   })
   .then((valuePerMember) => {
     console.log(`Valor por pessoa: ${valuePerMember}`);
@@ -119,3 +119,29 @@ groupMembers(4) //Cheancando o numero de pessoas no grupo
     // apenas pra finalizar o processo
     console.log("Processo finalizado");
   });
+
+/* 
+function processarPagamento(valorTotal, qtdPessoas) {
+  groupMembers(qtdPessoas).then((pessoas) => {
+    return calculateBill(valorTotal, qtdPessoas)
+  }).then((divisaoPerPerson) => {
+    console.log(`Valor por pessoas ${divisaoPerPerson}`)
+  }).catch((err) => {
+    console.log(`Mensagem de erro: ${err.message}`)
+  }).finally(() => {
+    console.log("Processo finalizado")
+  })
+} */
+
+/* Função para pegar os parametros antes e utiliza-los no groupMembers e calculateBill, assim o valor não fica fixo */
+function processarPagamento(valorTotal, qtdPessoas) {
+  groupMembers(qtdPessoas).then((pessoasEncontradas) => {
+    return calculateBill(valorTotal, pessoasEncontradas)
+  }).then((divisaoPorPessoa) => {
+    console.log(`Valor por pessoa ${divisaoPorPessoa}`)
+  }).catch((err) => {
+    console.log(`Mensagem de erro: ${err.message}`)
+  }).finally(() => {
+    console.log("Processo finalizado")
+  })
+}
