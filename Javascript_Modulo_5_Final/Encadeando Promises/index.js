@@ -92,9 +92,7 @@ function groupMembers(group) {
 function calculateBill(value, groupSize) {
   return new Promise((resolve, reject) => {
     if (typeof value !== "number" || value <= 0) {
-      reject(
-        new Error("O valor dever ser um numero e maior que 0"),
-      ); /* Mostrando como objeto Error */
+      reject(new Error("O valor dever ser um numero e maior que 0")); /* Mostrando como objeto Error */
     } else {
       let valuePerMember = value / groupSize;
       resolve(valuePerMember);
@@ -106,7 +104,7 @@ groupMembers(4) //Cheancando o numero de pessoas no grupo
   .then((groupSize) => {
     // Passei o numero de pessoas para a prox função, no caso calculateBill, que necessita dos parametros value e groupSize...Caso os dois passsem e sejam numeros validos, caimos no bloco de codigo resolve dentro do
     // do calculateBill, onde temos o valor/calculo por pessoa
-    return calculateBill(400, groupSize);  /* Como posso passar o valor da conta sem ser uma constante/elemento fixo?  */
+    return calculateBill(400, groupSize); /* Como posso passar o valor da conta sem ser uma constante/elemento fixo?  */
   })
   .then((valuePerMember) => {
     console.log(`Valor por pessoa: ${valuePerMember}`);
@@ -135,13 +133,17 @@ function processarPagamento(valorTotal, qtdPessoas) {
 
 /* Função para pegar os parametros antes e utiliza-los no groupMembers e calculateBill, assim o valor não fica fixo */
 function processarPagamento(valorTotal, qtdPessoas) {
-  groupMembers(qtdPessoas).then((pessoasEncontradas) => {
-    return calculateBill(valorTotal, pessoasEncontradas)
-  }).then((divisaoPorPessoa) => {
-    console.log(`Valor por pessoa ${divisaoPorPessoa}`)
-  }).catch((err) => {
-    console.log(`Mensagem de erro: ${err.message}`)
-  }).finally(() => {
-    console.log("Processo finalizado")
-  })
+  groupMembers(qtdPessoas)
+    .then((pessoasEncontradas) => {
+      return calculateBill(valorTotal, pessoasEncontradas);
+    })
+    .then((divisaoPorPessoa) => {
+      console.log(`Valor por pessoa ${divisaoPorPessoa}`);
+    })
+    .catch((err) => {
+      console.log(`Mensagem de erro: ${err.message}`);
+    })
+    .finally(() => {
+      console.log("Processo finalizado");
+    });
 }
