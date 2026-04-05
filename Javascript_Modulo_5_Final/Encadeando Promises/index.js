@@ -55,26 +55,67 @@ getAge("2006-09-29")
     console.log(`Mensagem de erro: ${err.message}`);
   });
 
-/* Outro exemplo */
+/* Outro exemplo - DEU ERRO */
+// function groupMembers(group) {
+//   return new Promise((resolve, reject) => {
+//     if (group > 1) {
+//       // const valuePerMember = value / group;
+//       resolve(valuePerMember);
+//     } else if (typeof group !== "number" || group <= 0) {
+//       reject(new Error("O grupo dever ser um numero e maior que 0"));
+//     }
+//   });
+// }
+// function getBills(value) {
+//   return new Promise((resolve, reject) => {
+//     if (group) {
+//       resolve(value / groupMembers);
+//     } else if (groupMembers == 1) {
+//       resolve(value);
+//     } else {
+//       reject(new Error("O valor deve ser um numero e maior que 0"));
+//     }
+//   });
+// } /* Ok obtive o valor mas como vou usar a qtd de pessoas ? Passando pra a prox função */
+
+/* ------------------- Jeito certo ------------------- */
 function groupMembers(group) {
   return new Promise((resolve, reject) => {
-    if (group > 1) {
-      // const valuePerMember = value / group;
-      resolve(valuePerMember);
-    } else if (typeof group !== "number" || group <= 0) {
-      reject(new Error("O grupo dever ser um numero e maior que 0"));
+    if (typeof group !== "number" || group <= 0) {
+      reject("O grupo deve ser um numero e maior que 0"); // Mostrando como sting
+    } else {
+      resolve(group); /* Passei a qtd de pessoas no grupo */
     }
   });
 }
 
-function getBills(value) {
+function calculateBill(value, groupSize) {
   return new Promise((resolve, reject) => {
-    if (group) {
-      resolve(value / groupMembers);
-    } else if (groupMembers == 1) {
-      resolve(value);
+    if (typeof value !== "number" || value <= 0) {
+      reject(
+        new Error("O valor dever ser um numero e maior que 0"),
+      ); /* Mostrando como objeto Error */
     } else {
-      reject(new Error("O valor deve ser um numero e maior que 0"));
+      let valuePerMember = value / groupSize;
+      resolve(valuePerMember);
     }
   });
 }
+
+groupMembers(4) //Cheancando o numero de pessoas no grupo
+  .then((groupSize) => {
+    // Passei o numero de pessoas para a prox função, no caso calculateBill, que necessita dos parametros value e groupSize...Caso os dois passsem e sejam numeros validos, caimos no bloco de codigo resolve dentro do
+    // do calculateBill, onde temos o valor/calculo por pessoa
+    return calculateBill(400, groupSize);
+  })
+  .then((valuePerMember) => {
+    console.log(`Valor por pessoa: ${valuePerMember}`);
+  })
+  .catch((err) => {
+    /* Caso o value obtido atraves do calculateBill seja invalido,caimos no reject */
+    console.log(`Mensagem de erro: ${err.message}`);
+  })
+  .finally(() => {
+    // apenas pra finalizar o processo
+    console.log("Processo finalizado");
+  });
