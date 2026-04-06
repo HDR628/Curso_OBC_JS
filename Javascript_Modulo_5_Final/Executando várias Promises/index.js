@@ -81,3 +81,59 @@ Promise.all(unsortedNumbers.sort((numerosDesordenados) => compareNumbers(numeros
   .catch((erro) => {
     console.log(erro);
   });  */
+
+function baixarArquivo(archive) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (typeof archive !== "string") {
+        reject("O arquivo deve ser do tipo string");
+      } else {
+        resolve("Arquivo baixado com sucesso");
+      }
+    }, 2000);
+  });
+}
+
+function processarArquivo(process) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (typeof process !== "string") {
+        reject("O arquivo necessita ser do tipo string para ser processado");
+      } else {
+        console.log("Processando arquivo...");
+        resolve("Arquivo processado com sucesso");
+      }
+    }, 3000);
+  });
+}
+
+function salvarArquivo(save) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (typeof save !== "string") {
+        reject("O arquivo necessita ser do tipo string para ser salvo");
+      } else {
+        console.log("Salvando arquivo...");
+        resolve("Arquivo salvo com sucesso");
+      }
+    });
+  });
+}
+/* Tem que colocar em array
+Se quiser da pra fazer assim tambem:
+let baixar = baixarArquivo("meuArquivo.txt");
+let processar = processarArquivo("meuArquivo.txt");
+let salvar = salvarArquivo("meuArquivo.txt");
+
+let infoArquivo = [baixar, processar, salvar];
+
+Promise.all(infoArquivo)
+ai so concatenar o then e catch, fica mais organizado
+*/
+Promise.all([baixarArquivo("meuArquivo.txt"), processarArquivo("meuArquivo.txt"), salvarArquivo("meuArquivo.txt")])
+  .then(() => {
+    console.log("Todas as operações foram concluídas com sucesso!");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
