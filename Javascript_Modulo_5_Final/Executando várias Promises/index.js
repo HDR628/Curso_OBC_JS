@@ -131,9 +131,13 @@ Promise.all(infoArquivo)
 ai so concatenar o then e catch, fica mais organizado
 */
 Promise.all([baixarArquivo("meuArquivo.txt"), processarArquivo("meuArquivo.txt"), salvarArquivo("meuArquivo.txt")])
-  .then(() => {
-    console.log("Todas as operações foram concluídas com sucesso!");
+  .then((results) => {
+    console.log(`Todas as operações foram concluídas com sucesso! 
+      baixarArquivo - ${results[0]}
+      processarArquivo - ${results[1]}
+      salvarArquivo - ${results[2]}`);
   })
   .catch((err) => {
     console.log(err);
   });
+/* Agora da pra ver o texto/resultado de cada parametro que passei */
