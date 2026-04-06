@@ -51,11 +51,28 @@ Promise.all(numbers.map((number) => asyncSquare(number))).then((squares) => {
 /* Vou testar ordenando um array de numeros */
 const unsortedNumbers = [5, 2, 9, 1, 6];
 
-function compareNumbers(a, b) {
+/* Usando map, pra retornar uma array de promises */
+let arrPromises = unsortedNumbers.map((number) => {
   return new Promise((resolve) => {
-    resolve(a - b);
+    resolve(number);
   });
-}
+});
+
+setTimeout(() => {
+  console.log(arrPromises);
+}, 3000); // Visualizar o arr de promises depois do resultado do promise.all
+
+Promise.all(arrPromises)
+  .then((sortedNumbers) => {
+    let sorted = sortedNumbers.sort((a, b) => a - b);
+    console.log(`Numeros ordenados: ${sorted}`);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+/* 
+
+O metodo sort que utilizei nao funciona com promises/assicronismo, ficando meio travado. Da pra fazer funcionar, se usar o map para criar um array de promises, e no then concatenar o sort
 
 Promise.all(unsortedNumbers.sort((numerosDesordenados) => compareNumbers(numerosDesordenados)))
   .then((sortedNumbers) => {
@@ -63,4 +80,4 @@ Promise.all(unsortedNumbers.sort((numerosDesordenados) => compareNumbers(numeros
   })
   .catch((erro) => {
     console.log(erro);
-  });
+  });  */
