@@ -47,3 +47,20 @@ Promise.all() retorna um array de promises caso todas sejam resolvidas, retorna 
 Promise.all(numbers.map((number) => asyncSquare(number))).then((squares) => {
   console.log(squares);
 });
+
+/* Vou testar ordenando um array de numeros */
+const unsortedNumbers = [5, 2, 9, 1, 6];
+
+function compareNumbers(a, b) {
+  return new Promise((resolve) => {
+    resolve(a - b);
+  });
+}
+
+Promise.all(unsortedNumbers.sort((numerosDesordenados) => compareNumbers(numerosDesordenados)))
+  .then((sortedNumbers) => {
+    console.log(sortedNumbers);
+  })
+  .catch((erro) => {
+    console.log(erro);
+  });
