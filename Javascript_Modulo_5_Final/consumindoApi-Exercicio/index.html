@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Controle de Finanças Pessoais</title>
+  </head>
+  <body>
+    <main style="display: flex; gap: 4rem; margin: 1rem 2rem">
+      <form id="transaction-form">
+        <h2>Nova Transação</h2>
+        <label for="transaction-name">Nome:</label>
+        <br />
+        <input type="text" id="transaction-name" name="name" required />
+        <br />
+        <label for="transaction-value">Valor:</label>
+        <br />
+        <input type="number" id="transaction-value" name="value" required />
+        <br />
+        <button>Salvar</button>
+      </form>
+      <div>
+        <h2>Transações</h2>
+        <section id="transactions"></section>
+      </div>
+      <section id="balance">
+        <h2>Saldo Total</h2>
+        <p id="total-balance">R$ 0,00</p>
+      </section>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,55 +1,103 @@
-// Esperar o DOM carregar para buscar as transações
+// Esperar o DOM carregar
 document.addEventListener("DOMContentLoaded", () => {
-  fetchTransactions();
+  fetchTransfers();
 });
 
-// Função para achar as transações
-async function fetchTransactions() {
-  const transactions = await fetch("http://localhost:3000/transactions").then((res) => res.json());
-  transactions.forEach(renderTransaction);
+// Função asíncrona para buscar as transferências do servidor
+async function fetchTransfers() {
+  const transfers = await fetch("http://localhost:3000/transactions");
+
+  const dataTransfers = await transfers.json();
+  dataTransfers.forEach(renderTransfer);
+  calculateTotal();
 }
 
-// Função para renderizar as transações
-function renderTransaction(transactionData) {
-  // Elemento pai
-  let transaction = document.createElement(`div`);
-  //identificador do elemento pai
-  transaction.id = `transaction-${transactionData.id}`;
+function renderTransfer(transferData) {
+  // Elemento pai, e incremento o id do elemento a cada trasnferência renderizada
+  const transference = document.createElement("div");
+  transference.id = transferData.id;
 
-  //Elemento filhos
-  let name = document.createElement(`div`);
-  name.textContent = transactionData.name;
+  // Elementos filhos
+  const name = document.createElement("p");
+  name.textContent = transferData.name;
 
-  let value = document.createElement(`div`);
-  value.textContent = transactionData.value;
+  const value = document.createElement("p");
+  value.textContent = transferData.value;
 
-  /* Atribuir os elementos filhos ao pai e depois passar para seção que exibira as transações */
-  transaction.append(name, value);
-  document.querySelector("#allTransactions").appendChild(transaction);
+  // Botoes para editar e excluir a transferência
+  const editBtn = document.createElement("button");
+  editBtn.textContent = "Editar";
+  editBtn.addEventListener("click", () => {
+    const newName = prompt("Digite o novo nome:");
+    const newValue = prompt("Digite o novo valor:");
+    updateTransfer(transferData.id, { name: newName, value: newValue });
+    calculateTotal();
+  });
+
+  const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "Excluir";
+  deleteBtn.addEventListener("click", () => {
+    deleteTrasnfer(transferData.id);
+    calculateTotal();
+  });
+
+  transference.append(name, value, editBtn, deleteBtn);
+  document.querySelector("#transactions").appendChild(transference);
 }
 
-// Seleção do Formulário
-let form = document.querySelector("form");
+// Seleção do form e POST
+const form = document.querySelector("#transaction-form");
 
-// Prevenir o comportamento padrão do formulario
 form.addEventListener("submit", async (ev) => {
   ev.preventDefault();
 
-  // Requisição POST
-  const trasnferData = {
-    name: document.querySelector("#name").value,
-    value: document.querySelector("#value").value,
+  const newTransferData = {
+    name: document.querySelector("#transaction-name").value,
+    value: document.querySelector("#transaction-value").value,
   };
 
-  let response = await fetch("http://localhost:3000/transactions", {
+  const responsePost = await fetch("http://localhost:3000/transactions", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(trasnferData),
+    body: JSON.stringify(newTransferData),
   });
 
-  let infoTrasnfer = await response.json();
-  renderTransaction(infoTrasnfer);
+  const saveNewTransfer = await responsePost.json();
+  console.log(saveNewTransfer);
+  renderTransfer(saveNewTransfer);
+  calculateTotal();
   form.reset();
 });
+
+async function updateTransfer(id, updateData) {
+  updateData = {
+    name: document.querySelector("#transaction-name").value,
+    value: document.querySelector("#transaction-value").value,
+  };
+
+  await fetch(`http://localhost:3000/transactions/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(updateData),
+  });
+}
+
+async function deleteTrasnfer(id) {
+  await fetch(`http://localhost:3000/transactions/${id}`, {
+    method: "DELETE",
+  });
+  document.getElementById(id).remove();
+}
+
+function calculateTotal() {
+  const updateAmount = document.querySelectorAll(".transaction-value");
+  let totalAmount = 0;
+
+  updateAmount.forEach((transaction) => {
+    totalAmount += transaction.value;
+  });
+
+  document.getElementById("total-amount").textContent = `Total: R$ ${totalAmount}`;
+}

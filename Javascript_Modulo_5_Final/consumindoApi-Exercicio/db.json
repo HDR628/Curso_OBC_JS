@@ -1,9 +1,10 @@
 {
   "transactions": [
     {
-      "id": "1",
-      "name": "Henrique",
-      "value": 30000
+      "name": "Jose",
+      "value": "30000",
+      "id": "PtDEgAHWPhM"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
