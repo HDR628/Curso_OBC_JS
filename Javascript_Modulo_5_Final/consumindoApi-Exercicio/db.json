@@ -1,9 +1,29 @@
 {
   "transactions": [
     {
-      "name": "Jose",
-      "value": "30000",
-      "id": "PtDEgAHWPhM"
+      "id": "1",
+      "name": "Freela",
+      "amount": 300
+    },
+    {
+      "name": "Salário",
+      "amount": 3200,
+      "id": "3"
+    },
+    {
+      "name": "Conta de água",
+      "amount": -100,
+      "id": "4"
+    },
+    {
+      "name": "Conta de luz",
+      "amount": -150,
+      "id": "5"
+    },
+    {
+      "name": "Freela",
+      "amount": 1200,
+      "id": "Y0YTRHcqLcI"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
