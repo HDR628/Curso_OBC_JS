@@ -3,7 +3,7 @@ let transactions = []
 function createTransactionContainer(id) {
   const container = document.createElement('div')
   container.classList.add('transaction')
-  container.id = `transaction${id}`
+  container.id = `transaction-${id}`
   return container
 }
 
@@ -112,7 +112,7 @@ async function saveTransaction(ev) {
     const transaction = await response.json()
     const indexToRemove = transactions.findIndex((t) => t.id === id)
     transactions.splice(indexToRemove, 1, transaction)
-    document.querySelector(`#transactions-${id}`).remove()
+    document.querySelector(`#transaction-${id}`).remove()
     renderTransaction(transaction)
 
   } else {
