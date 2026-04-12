@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src"
+  }
+}
+
+// outFile: foi descontinuado
+// não e mais necessario passar o watch: true no arquivo de configuração apenas no package.json
