@@ -1,0 +1,22 @@
+Typescript 
+
+Linguagem de Programação
+JS com tipagem (foi construido em cima)
+Fortemente tipada(nao consegue modificar as variaveis posteriormente)
+
+Bom para projetos grandes
+necessário ter um compilador pra transcrever pra JS(navegador e node)
+
+
+Tipos primitivos a bit different
+
+boolean ->  let example: boolean = true
+
+number -> let example: number = 10
+
+string -> let example: string = 'Hello'
+
+arrays -> (se for string tu bota string falou)
+let example: number[] = [1,2,3]
+or 
+example: Array<number> = [1,2,3]
