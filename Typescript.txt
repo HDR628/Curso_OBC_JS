@@ -1,0 +1,97 @@
+Typescript 
+
+Linguagem de Programação
+JS com tipagem (foi construído em cima)
+Fortemente tipada(não consegue modificar as variaveis posteriormente)
+
+Bom para projetos grandes
+necessário ter um compilador pra transcrever pra JS(navegador e node)
+
+
+Tipos primitivos a bit different
+
+boolean ->  let example: boolean = true
+
+number -> let example: number = 10
+
+string -> let example: string = 'Hello'
+
+arrays -> (se for string tu bota string falou)
+let example: number[] = [1,2,3]
+or 
+example: Array<number> = [1,2,3]
+
+-------------- 
+
+Aparentente se houver outras pastas de arquivos .ts com o mesmo nome de variável ele considera como escopo global e não posso usar o mesmo nome＞︿＜
+
+---------------
+
+Tipos extras 
+
+TUPLAS: 
+let crew: [string,string,string]    (No array crew so pode elementos do tipo string e na qtd de 3 - Array bem especifico, se tu tentar add mais um elemento ja apresenta o erro na IDE)
+
+ENUMS:
+enum Planets {
+	Mercurio,
+	Venus,
+	Terra,
+}
+
+Seria como usar um metodo no proprio "objeto"/Enum...
+Planets.Mercurio   (Ai ele retorna o indice/numero dele, no caso seria 0...Tambem podemos mudar o comportamento dele, se colocarmos eles com o Mercurio = 1, ai vai incrementando...)
+
+------------------------
+
+Evitando Tipagem
+
+
+Utilizando o ?  (Seria algo como opcional, tipo "tem ai ou não,senão sem problema" )
+function sendspaceship(spaceship{pilot: "String", copilot:? "String"}){
+	//codigo
+}
+
+Utilizando unknow ( E como falar que não sabe oq vai receber/atribuir a ele, ate mesmo recebendo outras variaveis tipadas, no caso ali tem o text:String)
+
+let input: unknow
+
+input = "Funciona"
+input = 1
+...
+
+let text: String
+text = input (N funciona)
+input = text (Funciona)
+
+Utilizando any (E como se o TS parasse de funcionar e deixar todo mundo passar, ñ e recomendado usar)
+
+
+let input: any
+
+input = "Funciona"
+input = 1
+...
+
+let text: String
+text = input (Agr funciona)
+input = text (Funciona)
+
+
+
+Utilizando never - Caso que nao deveria acontecer...
+
+function verification(test){
+	if(test){
+	// codigo
+	}else{
+	let _check: never
+	
+	_check = 3 (Não funciona)
+	let text = _check (Funciona, ai fica atribuido ao text o never e nunca recebera nenhum valor)
+	
+	return _check
+	}
+}
+
+
