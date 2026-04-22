@@ -1,0 +1,16 @@
+node_modules/
+dist/
+build/
+coverage/
+*.log
+.env
+.env.*
+
+# TypeScript
+*.tsbuildinfo
+
+# Editor/OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
