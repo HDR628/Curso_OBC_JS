@@ -42,6 +42,10 @@ interface Ship {
   
     // Se deixássemos sem o tipo Ship desativaríamos
     // totalmente o typescript para esse argumento
+
+    // Sem o tipo generico "inferindo" oq vamos receber e herdar de outras interfaces o tipo que e recebi/interface será padronizado para o tipo/interface primaria/base,
+    // neste caso queriamos saber o tipo da aeronave, sendo a interface/base Ship com as possiveis categorias fighter,transport...Queriamos essa categoria, logo o tipo generico se torna
+    //util relevante
     //   function cloneShip(ship: Ship, newName: string, newPilot: string) {
     //     const newShip = ship
     //     newShip.name = newName
@@ -73,3 +77,40 @@ interface Ship {
   // pois a ambas é atribuido o tipo Ship
   const copy1 = cloneShip(falcon, 'Milano', 'Peter')
   const copy2 = cloneShip(xWing, 'Black One', 'Poe')
+
+
+  /* Aqui e outro caso onde crio uma propriedade opcional que fala a flag, no caso se e inimigo */
+  interface EnemyShip {
+    name: string
+    pilot: string
+    flag?: string // A propriedade é opcional para evitar erros
+  }
+  
+  // O tipo Ship não estaria correto aqui
+  const enemyCopy = cloneShip(falcon, 'Enemy', 'Enemy')
+  
+  // Mas podemos explicitamente passar o tipo para a função
+  // e agora temos o tipo EnemyShip atribuido corretamente
+  const enemyCopy2 = cloneShip<EnemyShip>(falcon, 'Enemy', 'Enemy')
+  
+  // Aqui temos um erro por conta do tipo Ship
+  enemyCopy.flag = 'Imperial'
+  // Já aqui temos a propriedade opcional flag
+  enemyCopy2.flag = 'Imperial'
+
+
+// Segue a mesma implementação das funções
+// e o mesmo valeria para as interfaces
+class Pilot <ShipType> {
+    name: string
+    ship: ShipType
+  
+    constructor(name: string, ship: ShipType) {
+      this.name = name
+      this.ship = ship
+    }
+  }
+  
+  // Apesar de não ser necessário aqui, seria possível explicitar o tipo da mesma forma
+  const han = new Pilot('Han Solo', falcon)
+  const luke = new Pilot<Fighter>('Luke Skywalker', xWing)
