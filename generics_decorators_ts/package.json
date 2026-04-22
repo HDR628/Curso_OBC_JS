@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "tsc": "tsc --watch",
+    "build": "tsc -p tsconfig.json",
+    "build:decorators": "tsc src/decorators.ts --outDir dist/public --module nodenext --target esnext --experimentalDecorators",
+    "watch": "tsc -p tsconfig.json --watch",
+    "watch:decorators": "tsc --watch --ignoreConfig src/decorators.ts --outDir dist/public --module nodenext --target esnext --experimentalDecorators"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}

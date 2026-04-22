@@ -94,7 +94,7 @@ interface Ship {
   const enemyCopy2 = cloneShip<EnemyShip>(falcon, 'Enemy', 'Enemy')
   
   // Aqui temos um erro por conta do tipo Ship
-  enemyCopy.flag = 'Imperial'
+//   enemyCopy.flag = 'Imperial' Por não estar especificado o tipo ele fica meio que procurando na interface ship oq seria essa flag opcional que passamos na interface enemyShip
   // Já aqui temos a propriedade opcional flag
   enemyCopy2.flag = 'Imperial'
 
