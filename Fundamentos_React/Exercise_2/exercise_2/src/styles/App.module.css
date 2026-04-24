@@ -1,0 +1,8 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: darkslategray;
+  border-radius: 10px;
+}
