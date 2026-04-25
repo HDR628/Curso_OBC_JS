@@ -1,3 +1,3 @@
-export function FilmTitle() {
-  return <h1>Poster: Star Wars (1977)</h1>;
+export function FilmTitle({title}) {
+  return <h1>{title}</h1>;
 }

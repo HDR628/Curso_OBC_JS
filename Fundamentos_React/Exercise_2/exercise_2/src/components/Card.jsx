@@ -2,7 +2,11 @@ import { FilmTitle } from "./FilmTitle";
 import { Description } from "./Description";
 import styles from "../styles/App.module.css";
 
-export function Card() {
+/* Utilização de props pra reutilizar componentes com outros dados, seguindo um padrão 
+Caso houver depedendencia de outro componente, como neste caso com filmtitle e description
+Devemos passar as props para eles no componente que desejamos, no caso do filmTitle é o h1 (passamos a props dentro dele). 
+*/
+export function Card({title, description}) {
   return (
     <div className={styles.card}>
       <img
@@ -11,8 +15,8 @@ export function Card() {
         // style={styles.poster} da erro 
         className={styles.poster}/>
       <div className={styles.content}>
-        <FilmTitle />
-        <Description />
+        <FilmTitle title={title}/>
+        <Description description={description}/>
         <button className={styles.buyBtn}>Comprar Agora</button>
       </div>
     </div>        
