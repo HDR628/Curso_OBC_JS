@@ -1,0 +1,43 @@
+.profileContainer {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+}
+
+
+.profile {
+  max-width: 600px;
+  max-height: 600px;
+  padding: 10rem;
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center ;
+}
+
+.profile img {
+  border-radius: 50%;
+}
+
+
+.profile hr {
+  color: blueviolet;
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.btnContainer .btn {
+ background-color: blue;
+ color: white;
+ text-align: center;
+ padding: 10px;
+ 
+}
