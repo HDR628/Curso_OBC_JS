@@ -5,12 +5,20 @@ export default function App() {
   return (
     <div className={styles.profileContainer}>
       <Profile
-        avatar={<img src="" alt="" />}
-        name=""
-        bio=""
-        email=""
-        phone=""
-        githubUrl=""
+        avatar={"/max.jpg"}
+        name="Linus Torvalds"
+        bio="Desenvolvedor Web"
+        email="[EMAIL_ADDRESS]"
+        phone="(11) 98765-4321"
+        githubUrl="https://github.com/torvalds"
+      />
+      <Profile
+        avatar={"/max.jpg"}
+        name="Linus Torvalds"
+        bio="Desenvolvedor Web"
+        email="[EMAIL_ADDRESS]"
+        phone="(11) 98765-4321"
+        githubUrl="https://github.com/torvalds"
       />
     </div>
   )

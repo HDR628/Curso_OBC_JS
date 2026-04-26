@@ -3,13 +3,13 @@ import styles from "../styles/App.module.css"
 export function Profile({avatar,name,bio,email,phone,githubUrl}){
   return (
     <div className={styles.profile}>
-      <img src={avatar} alt={"Imagem de Perfil do usuário " + {name}} />
+      <img src={avatar} alt={"Imagem de Perfil do usuário " + name} />
       <h1>{name}</h1>
       <hr />
       <p>{bio}</p>
-      <hr />
+      <hr />  
       <p>{phone}</p>
-      <hr />
+      <hr />  
       <p>{email}</p>
       <div className={styles.btnContainer}>
         <button className={styles.btn} ><a href={githubUrl}>Github</a></button> 

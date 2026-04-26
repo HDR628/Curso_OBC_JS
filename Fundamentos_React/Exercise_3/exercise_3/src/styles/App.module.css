@@ -1,6 +1,8 @@
 .profileContainer {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
+  gap: 2rem;
   justify-content: center;
   align-items: center;
   background-color: gray;
@@ -16,15 +18,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: center ;
+  gap: 10px;
+  border-radius: 10px;
 }
 
 .profile img {
-  border-radius: 50%;
+  border-radius: 40%;
+  max-width: 150px;
+  max-height: 150px;
+  object-fit: cover;
 }
 
 
 .profile hr {
-  color: blueviolet;
+  width: 100%;
+  border-color: blueviolet;
 }
 
 .btnContainer {
@@ -32,12 +40,18 @@
   flex-direction: column;
   gap: 10px;
   padding: 10px;
+ width: 200px;
 }
 
 .btnContainer .btn {
- background-color: blue;
  color: white;
  text-align: center;
- padding: 10px;
- 
+ padding: 20px 50px;
+ border-radius: 10px;
+ background-image: linear-gradient(to bottom, blue, blueviolet);
+}
+
+.btn a {
+  text-decoration: none;
+  color: white;
 }
