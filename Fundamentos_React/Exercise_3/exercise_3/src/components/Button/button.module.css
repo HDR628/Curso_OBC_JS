@@ -6,15 +6,3 @@
  width: 200px;
 }
 
-.btnContainer .btn {
- color: white;
- text-align: center;
- padding: 20px 50px;
- border-radius: 10px;
- background-image: linear-gradient(to bottom, blue, blueviolet);
-}
-
-.btn a {
-  text-decoration: none;
-  color: white;
-}
