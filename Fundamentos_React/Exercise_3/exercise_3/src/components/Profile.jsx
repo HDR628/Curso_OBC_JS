@@ -3,15 +3,19 @@ import { Button } from "./Button/Button"
 import { ProfileSection } from "./ProfileSection/ProfileSection"
 import { Title } from "./Title"
 
-/* Por padrão nos declaramos as funções antes do return caso seja necessario acessar alguma props, mas caso seja algo simples como nesse caso poderiamos fazer de forma
-inline mesmo.Tambem podemos declarar ela um arquivo separado e depois importá-la 
-*/
-function handleFollow(ev) {
-  console.log(ev)
-  alert("Voce agr esta seguindo")
-}
 export function Profile({avatar, bio, email, phone, githubUrl, children}){
+  // [valor, funçãoModificadora]
+  const [followText, setFollowText] = useState('Follow')
 
+  /* Por padrão nos declaramos as funções antes do return caso seja necessario acessar alguma props, mas caso seja algo simples como nesse caso poderiamos fazer de forma
+  inline mesmo.Tambem podemos declarar ela um arquivo separado e depois importá-la 
+  */
+  function handleFollow(ev) {
+    alert("Voce agr esta seguindo")
+    /* Função que vai modificar o valor da variavel followText */
+    setFollowText("Following")
+  }
+  
 
   return (
     <div className={styles.profile}>
@@ -19,8 +23,9 @@ export function Profile({avatar, bio, email, phone, githubUrl, children}){
       <Title>
         <p>Nome</p>
         {children}
-        <button onClick={handleFollow}> 
-          Follow
+        <button onClick={handleFollow}>
+          {/* Aqui coloca o nome da variavel/valor */} 
+          {followText}
         </button>
       </Title>
       <ProfileSection>
