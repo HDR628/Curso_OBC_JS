@@ -35,15 +35,7 @@
   border-color: blueviolet;
 }
 
-.btnContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 10px;
- width: 200px;
-}
-
-.btnContainer .btn {
+.btn {
  color: white;
  text-align: center;
  padding: 20px 50px;
@@ -54,4 +46,20 @@
 .btn a {
   text-decoration: none;
   color: white;
+}
+
+
+.titleWrapper {
+  color: blueviolet;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titleWrapper button {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
 }
