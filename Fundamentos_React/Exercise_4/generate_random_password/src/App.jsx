@@ -10,6 +10,8 @@ function App() {
   function handlePassword(){
     setPassword(Math.random().toString(36).slice(2))  
     alert("Senha gerada")
+    setCopyText("Copiar") // Sempre que uma senha for gerada o botão que poderia estar como copiado, retorna ao "copiar"
+    // Meio que um reset 
   }
 
   /* Função que altera o texto copiar p/ copiado */
@@ -19,6 +21,11 @@ function App() {
     navigator.clipboard.writeText(password) 
     alert("Copiado")
     setCopyText('Copiado!')
+
+    /* E possivel colocar o metodo setTimeout aqui */
+    setTimeout(() => {
+      setCopyText("Copiar")
+    }, 3000)
     
   }
 
