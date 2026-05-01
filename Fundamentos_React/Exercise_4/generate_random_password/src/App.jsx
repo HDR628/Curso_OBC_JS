@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import Input from './components/Input'
 
 function App() {
 
@@ -38,6 +38,8 @@ function App() {
   /* Use State para colocar o tamanho que o usuario desejar na senha, sendo o padrão 12 */
   const [passwordSize,setPasswordSize] = useState(12) // Atribuição de valor padrão
 
+
+
   
   return (
     <>
@@ -45,9 +47,7 @@ function App() {
       <h1>Gerador de Senhas</h1>
       <div>
         <label htmlFor="passwordSize">Tamanho:</label>
-        {/* Essa parte do ev.target.value e importante, normalmente devolve com string que em algumas linguagens pode dar erro no entanto no formato JS/JSX ele consegue converter
-        em numero e nao da erro, mas a questão principal e ele estar basicamente dizendo "Olha pro meu elemento(no caso input) e salva/passa o valor dele pra variavel passwordSize" */}
-        <input type="number" id='passwordSize' value={passwordSize} onChange={(ev) => setPasswordSize(ev.target.value)} min={1} />
+        <Input passwordSize={passwordSize} setPasswordSize={setPasswordSize} />
       </div>
       <div className='btnContainer'>
         <button onClick={handlePassword}>Gerar Senha</button>
