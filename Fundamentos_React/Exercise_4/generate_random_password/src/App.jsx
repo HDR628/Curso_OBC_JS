@@ -36,9 +36,12 @@ function App() {
   }
 
   /* Use State para colocar o tamanho que o usuario desejar na senha, sendo o padrão 12 */
-  const [passwordSize,setPasswordSize] = useState(12) // Atribuição de valor padrão
+  const [customSize,setCustomSize] = useState(12) // Atribuição de valor inicial, diferente de valor padrão
 
 
+  const [showInput,setShowInput] = useState(false)
+
+  const passwordSize = showInput ? customSize : 8
 
   
   return (
@@ -46,11 +49,26 @@ function App() {
     <div className='container'>
       <h1>Gerador de Senhas</h1>
       <div>
-        <label htmlFor="passwordSize">Tamanho:</label>
-        <Input passwordSize={passwordSize} setPasswordSize={setPasswordSize} />
+        <label htmlFor="showInput" id='showInput'>Customizar Tamanho:</label>
+        <input 
+        type="checkbox" 
+        id='showInput'
+        value={showInput}
+        onChange={(ev) => setShowInput(currentState => !currentState)}
+        />
       </div>
+      {/* Parte de mostrar o input ou não */}
+
+      {showInput ? (
+      <div>
+        <label htmlFor="passwordSize">Tamanho:</label>
+        <Input passwordSize={customSize} setPasswordSize={setCustomSize} />
+      </div> 
+      ): null  }
+
       <div className='btnContainer'>
-        <button onClick={handlePassword}>Gerar Senha</button>
+        {/* Aqui fica uma padrão fixo sem o checkbox marcado, no caso 8(Gerando apenas uma senha de 8 caracteres) */}
+        <button onClick={handlePassword}>Gerar Senha de {passwordSize}</button>
         <button onClick={handleCopy}>{copy}</button>
       </div>
       <span>{password}</span>
