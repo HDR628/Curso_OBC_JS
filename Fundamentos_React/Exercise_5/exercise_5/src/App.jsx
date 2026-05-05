@@ -7,12 +7,15 @@ function App() {
   const [comment,setComment] = useState('')
 
   const [arrComment,setArrComments] = useState([])
-  
+
+    
   /* Funções  */
 
   function addComments({email,comment}){
     const id = Math.floor(Math.random() * 123)
-    const newComment = {id,email,comment}
+    const data = new Date().toLocaleString()  
+    const newComment = {id,email,data,comment}
+
     setArrComments((actualState) => {
       return [newComment, ...actualState]
     })
@@ -41,13 +44,14 @@ function App() {
           </div>
           <div>
             <label htmlFor="inputComments">Comentario:</label>
-            <input 
-            type="textarea" 
-            id="inputComments"
+            <textarea 
+            name="inputComments" 
+            id="inputComments" 
             value={comment}
-            onChange={(ev) => setComment(ev.target.value)}/>
+            onChange={(ev) => setComment(ev.target.value)}></textarea>
           </div>
           <button>Enviar Comentario</button>
+          
         </form>
         <div className="allComents">
           {arrComment.length > 0 ? 
@@ -55,6 +59,7 @@ function App() {
             <div key={comment.id}>
               <p>{comment.email}</p>
               {/* <p>{new Date.toLocaleString()}</p> */}
+              <span>{comment.data}</span>
               <p>{comment.comment}</p>
             </div>
           ))  : (
