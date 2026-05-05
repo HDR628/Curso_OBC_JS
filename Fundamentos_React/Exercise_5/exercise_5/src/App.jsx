@@ -1,27 +1,8 @@
-import { useState } from "react"
 import { FormComment } from "./components/FormComment"
 
 
 function App() {
   
-  const [arrComment,setArrComments] = useState([])
-
-    
-  /* Funções  */
-
-  function addComments({email,comment}){
-    const id = Math.floor(Math.random() * 123)
-    const data = new Date().toLocaleString()  
-    const newComment = {id,email,data,comment}
-
-    setArrComments((actualState) => {
-      return [newComment, ...actualState]
-    })
-  }
-
-
-
-
   return (
     <div className='container'>
       <div className='sessionComents'>
@@ -39,7 +20,6 @@ function App() {
           ))  : (
           <h1>Seja o primeiro a comentar!</h1>
         ) }
-          
         </div>
       </div>
       
