@@ -1,8 +1,9 @@
-export function AddGame(){
+import { useState } from "react"
+
+export function AddComment(){
     const [arrComment,setArrComments] = useState([])
       
-    /* Funções  */
-  
+    
     function addComments({email,comment}){
       const id = Math.floor(Math.random() * 123)
       const data = new Date().toLocaleString()  
@@ -13,5 +14,5 @@ export function AddGame(){
       })
     }
   
-  return{addComments}
+  return{arrComment,addComments}
 }

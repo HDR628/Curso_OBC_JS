@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export function FormComment() {
+export function FormComment({ addComments }) {
 
   /* Declarações de useState */
   const [email,setEmail] = useState('')
