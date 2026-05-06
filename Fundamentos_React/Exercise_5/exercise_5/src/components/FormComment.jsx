@@ -22,8 +22,8 @@ export function FormComment({ addComments }) {
 
   return (
     <form className="formContainer" onSubmit={handleSubmit}>
-      <InputEmail label="Email" email={email} setEmail={setEmail}/>
-      <InputTextArea label="Comentario:" comment={comment} setComment={setComment} />
+      <InputEmail id="email" label="Email" email={email} setEmail={setEmail}/>
+      <InputTextArea id="comment" label="Comentario:" comment={comment} setComment={setComment} />
       <button>Enviar Comentario</button>
     </form>
   )

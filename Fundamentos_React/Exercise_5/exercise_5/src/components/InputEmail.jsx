@@ -1,11 +1,11 @@
 
-export function InputEmail({label,email,setEmail}){
+export function InputEmail({id,label,email,setEmail}){
   return(
     <div>
-      <label htmlFor={label}>{label}</label>
+      <label htmlFor={id}>{label}</label>
       <input
         type="text"
-        id={label}
+        id={id}
         value={email}
         onChange={(ev) => setEmail(ev.target.value)} />
       </div>

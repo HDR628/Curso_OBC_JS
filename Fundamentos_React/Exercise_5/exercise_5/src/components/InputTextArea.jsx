@@ -1,10 +1,10 @@
 
-export function InputTextArea({label,comment,setComment}){
+export function InputTextArea({id,label,comment,setComment}){
   return(
     <div>
-      <label htmlFor={label}>{label}</label>
+      <label htmlFor={id}>{label}</label>
       <textarea
-        id={label}
+        id={id}
         value={comment}
         onChange={(ev) => setComment(ev.target.value)} />
       </div>
