@@ -10,9 +10,14 @@ export function FormComment({ addComments }) {
 
   function handleSubmit(ev){
     ev.preventDefault()
-    addComments({email,comment})
-    setEmail('')
-    setComment('')
+
+    if(!email || !comment){
+      return console.log("E necessario adicionar o email e comentario")
+    }else{
+      addComments({email,comment})
+      setEmail('')
+      setComment('')
+    }    
   }
 
   return (
