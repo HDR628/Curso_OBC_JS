@@ -1,0 +1,141 @@
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: #ffcb05;
+  text-shadow: 2px 2px #3c5aa6;
+  margin-bottom: 2rem;
+}
+
+.app-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pokemon-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  max-width: 600px;
+  width: 100%;
+}
+
+.pokemon-list li {
+  background: #333;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.2s, background 0.2s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.pokemon-list li:hover {
+  transform: translateY(-5px);
+  background: #444;
+}
+
+.pokemon-list span {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.pokemon-list button {
+  background: #ffcb05;
+  color: #3c5aa6;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.pokemon-list button:hover {
+  background: #e5b704;
+}
+
+.details-card {
+  background: #1a1a1a;
+  border: 3px solid #ffcb05;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+  text-align: left;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  position: sticky;
+  top: 2rem;
+}
+
+.details-card h2 {
+  text-transform: capitalize;
+  margin-top: 0;
+  border-bottom: 2px solid #3c5aa6;
+  padding-bottom: 0.5rem;
+}
+
+.details-card img {
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 0 10px rgba(255,203,5,0.3));
+}
+
+.stat {
+  margin: 0.8rem 0;
+  font-size: 0.9rem;
+}
+
+.stat b {
+  color: #ffcb05;
+}
+
+.stat ul {
+  padding-left: 1.2rem;
+  margin: 0.3rem 0;
+}
+
+.stat span {
+  background: #3c5aa6;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  margin-right: 4px;
+}

@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "./App.css"
 
 async function fetchPokemon(){
   const response = await fetch("https://pokeapi.co/api/v2/pokemon")
@@ -28,13 +29,15 @@ export default function App(){
   }
 
   return(
-    <>
-      <h1>Opa</h1>
-      <ul className="pokemon">
+    <div className="app-container">
+      <h1>Pokédex</h1>
+      <ul className="pokemon-list">
           {pokemon.map(mon => (
             <li key={mon.name}>
               <span>{mon.name}</span>
-              <button onClick={() => showDetails(mon.url)}/>
+              <button onClick={() => showDetails(mon.url)}>
+                Ver Detalhes
+              </button>
             </li>
           ))}
         </ul>     
@@ -42,7 +45,7 @@ export default function App(){
 
 
         {pokemonShown && (
-        <div>
+        <div className="details-card">
           <h2>{pokemonShown.name}</h2>
           <img
             src={pokemonShown.sprites.front_default}
@@ -83,6 +86,6 @@ export default function App(){
           </div>
         </div>
       )}
-    </>
+    </div>
   )
 }
