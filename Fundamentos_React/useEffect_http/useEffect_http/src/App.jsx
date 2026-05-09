@@ -8,6 +8,8 @@ async function fetchPokemon(){
 
 export default function App(){
   const [pokemon,setPokemon] = useState([])
+  const [pokemonShown, setPokemonShown] = useState(null)
+
   
 
   /* Caso nao utilizamos o useEffect o fetch/require ia ficar renderizando/solicitando novamente infitamente... */
@@ -19,6 +21,12 @@ export default function App(){
     })
   ,[])
 
+  const showDetails = async (url) => {
+    const data = await fetch(url).then(res => res.json())
+    console.log(data)
+    setPokemonShown(data)
+  }
+
   return(
     <>
       <h1>Opa</h1>
@@ -26,12 +34,55 @@ export default function App(){
           {pokemon.map(mon => (
             <li key={mon.name}>
               <span>{mon.name}</span>
-              <button>
-                Ver detalhes
-              </button>
+              <button onClick={() => showDetails(mon.url)}/>
             </li>
           ))}
         </ul>     
+
+
+
+        {pokemonShown && (
+        <div>
+          <h2>{pokemonShown.name}</h2>
+          <img
+            src={pokemonShown.sprites.front_default}
+            alt=""
+          />
+          <div className="stat">
+            <b>Tipo: </b>
+            {pokemonShown.types.map(({ type }) => (
+              <span key={type.name}>{type.name} </span>
+            ))}
+          </div>
+          <div className="stat">
+            <b>Altura: </b>{pokemonShown.height / 10} m
+          </div>
+          <div className="stat">
+            <b>Peso: </b>{pokemonShown.weight / 10} Kg
+          </div>
+          <div className="stat">
+            <b>Atributos</b>
+            <ul>
+              {pokemonShown.stats.map(({ base_stat, stat }) => (
+                <li key={stat.name}>
+                  {stat.name}: {base_stat}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="stat">
+            <b>Habilidades</b>
+            <ul>
+              {pokemonShown.abilities.map(({ ability, is_hidden }) => (
+                <li key={ability.name}>
+                  {ability.name}
+                  {is_hidden && " (secreta)"}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
     </>
   )
 }
