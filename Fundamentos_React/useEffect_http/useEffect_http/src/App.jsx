@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 async function fetchPokemon(){
   const response = await fetch("https://pokeapi.co/api/v2/pokemon")
   const data = await response.json()
-  return data
+  return data.results
 }
 
 export default function App(){
@@ -13,13 +13,13 @@ export default function App(){
   
 
   /* Caso nao utilizamos o useEffect o fetch/require ia ficar renderizando/solicitando novamente infitamente... */
-  useEffect(() => {
-    fetchPokemon().then(data => {
-      console.log("Realizando requisição")
-      console.log(data)
-      setPokemon(data.results)
+  if (pokemon.length === 0) {
+    fetchPokemon().then(result => {
+      console.log("Requisição realizada")
+      console.log(result)
+      setPokemon(result)
     })
-  }, [])
+  }
 
   const showDetails = async (url) => {
     const data = await fetch(url).then(res => res.json())
