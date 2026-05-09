@@ -13,13 +13,13 @@ export default function App(){
   
 
   /* Caso nao utilizamos o useEffect o fetch/require ia ficar renderizando/solicitando novamente infitamente... */
-  useEffect(() =>
-    fetchPokemon().then(results => {
+  useEffect(() => {
+    fetchPokemon().then(data => {
       console.log("Realizando requisição")
-      console.log(results)
-      setPokemon(results)
+      console.log(data)
+      setPokemon(data.results)
     })
-  ,[])
+  }, [])
 
   const showDetails = async (url) => {
     const data = await fetch(url).then(res => res.json())
