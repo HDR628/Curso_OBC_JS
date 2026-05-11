@@ -6,7 +6,7 @@ export default function Header() {
         <nav>
           <Link to="/home">Inicio</Link>
           <Link to="/products">Produtos</Link>
-          <Link to="/carts">Cart</Link>
+          <Link to="/cart">Cart</Link>
         </nav>
       </header>
   )

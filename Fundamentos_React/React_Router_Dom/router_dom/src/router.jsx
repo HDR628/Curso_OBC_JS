@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom"
 import AdminHome from "./pages/admin/Admin"
+import Cart from "./pages/Cart"
 import Home from "./pages/Home"
 import Products from "./pages/Products"
 
