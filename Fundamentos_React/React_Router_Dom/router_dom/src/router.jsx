@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom"
-import AdminHome from "./components/Admin"
-import Home from "./components/Home"
-import Products from "./components/Products"
+import AdminHome from "./pages/admin/Admin"
+import Home from "./pages/Home"
+import Products from "./pages/Products"
 
 const router = createBrowserRouter([
   {
