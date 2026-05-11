@@ -12,7 +12,7 @@ export default function RootLayout(){
         <Outlet/>
       </main>
       <footer>
-        Rodape Simples
+        Footer simples
       </footer>
     </> 
   )
