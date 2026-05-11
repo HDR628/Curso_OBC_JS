@@ -3,6 +3,13 @@ import products from "../database.json"
 export default function Products() {
   return (
     <section>
+      <header>
+        <nav>
+          <Link to="/home">Inicio</Link>
+          <Link to="/products">Produtos</Link>
+          <Link to="/carts">Cart</Link>
+        </nav>
+      </header>
       <h2>Todos os produtos</h2>
       <p>Confira todas as nossas ofertas.</p>
       <section className="products">

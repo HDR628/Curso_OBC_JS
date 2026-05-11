@@ -1,10 +1,8 @@
 import './App.css'
+import router from './router'
 
 function App() {
-  return 
-  <Router.Provider>
-    
-  </Router.Provider> 
+  return <Router.Provider router={router}/>
 }
 
 export default App

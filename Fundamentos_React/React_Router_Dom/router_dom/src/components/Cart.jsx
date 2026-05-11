@@ -1,6 +1,13 @@
 export default function Cart() {
   return (
     <section>
+      <header>
+        <nav>
+          <Link to="/home">Inicio</Link>
+          <Link to="/products">Produtos</Link>
+          <Link to="/carts">Cart</Link>
+        </nav>
+      </header>
       <h2>Carrinho</h2>
       <p>Os produtos atualmente em seu carrinho.</p>
       <ul>
