@@ -1,18 +1,8 @@
-import { Link, useParams } from "react-router-dom"
-import products from "../database.json"
+import { Link, useLoaderData } from "react-router-dom"
 
 export default function Product(){
-
-  const { productId } = useParams()
-
-  /* String to number +productID  */
-  const product = products.find(p => p.id === +productId)
-
-  if(!product){
-    return(
-      <h2>Opps...esse produto nao foi encontrado</h2>
-    )
-  }
+  
+  const products = useLoaderData()
 
   return(
     <section>
