@@ -2,7 +2,9 @@ import { Link, useLoaderData } from "react-router-dom"
 
 export default function Product(){
   
-  const products = useLoaderData()
+  const product = useLoaderData()
+
+  // throw new Error("Teste de erro")
 
   return(
     <section>

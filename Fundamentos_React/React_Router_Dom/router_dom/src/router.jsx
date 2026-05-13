@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import ProductBoundary from "./error_boundaries/ProductBoundary";
 import loadProduct from "./loaders/products";
 import Admin from "./pages/admin/Admin";
 import Cart from "./pages/Cart";
@@ -26,7 +27,8 @@ const router = createBrowserRouter([
     {
       path: "products/:productId",
       element: <Product/>,
-      loader: loadProduct
+      loader: loadProduct,
+      errorElement: <ProductBoundary/>
     },
     {
       path: "cart",
