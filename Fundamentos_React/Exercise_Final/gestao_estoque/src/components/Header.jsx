@@ -6,7 +6,10 @@ export function Header(){
     <div className="header">
       <h2>React Stock</h2>
       <nav>
-        <Link to="/home">
+        {/* Não e necessario colocar o homepage, pq no Layout que criei coloque
+        pra herdar o caminho raiz, no caso o "/" ai ele identifica como o "homepage"
+        devido ao index true e componente/elemento  */}
+        <Link to="/">
           <h3>Inicio | Rotas para o inicio</h3>
         </Link>
         <Link to="/StockItems">
