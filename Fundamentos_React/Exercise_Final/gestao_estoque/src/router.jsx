@@ -1,6 +1,9 @@
 import { createBrowserRouter } from "react-router-dom"
+import { EditItem } from "./pages/EditItem"
 import { Homepage } from "./pages/Homepage"
+import { Item } from "./pages/Item"
 import Layout from "./pages/Layout"
+import { NewItem } from "./pages/NewItem"
 import { StockItems } from "./pages/StockItems"
 
 const router = createBrowserRouter([
@@ -14,6 +17,18 @@ const router = createBrowserRouter([
     {
       path: "StockItems",
       element: <StockItems/>
+    },
+    {
+      path: "Item",
+      element: <Item/>
+    },
+    {
+      path: "NewItem",
+      element: <NewItem/>
+    },
+    {
+      path: "EditItem",
+      element: <EditItem/>
     }
     ]
   }
