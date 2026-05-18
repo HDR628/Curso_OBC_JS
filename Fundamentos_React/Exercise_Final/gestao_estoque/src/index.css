@@ -194,6 +194,84 @@ h1 {
 }
 
 /* ==========================================================================
+   ESTILOS DAS ABAS (TABS) E TABELA DE ITENS
+   ========================================================================== */
+.tabs {
+  display: flex;
+  gap: 24px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 24px;
+}
+
+.tab {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 4px 12px 4px;
+  transition: color 0.2s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.tab:hover {
+  color: var(--text-primary);
+}
+
+.tab.active {
+  color: var(--text-primary);
+  border-bottom-color: var(--text-primary);
+}
+
+/* Tabela de Produtos */
+.productsTableSection {
+  background-color: var(--bg-secondary);
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  overflow-x: auto;
+}
+
+.productsTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.productsTable th {
+  background-color: var(--bg-header);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.productsTable td {
+  padding: 16px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 15px;
+  vertical-align: middle;
+}
+
+.productsTable tr:last-child td {
+  border-bottom: none;
+}
+
+/* Coluna de Ações e IDs */
+.product-id {
+  font-family: monospace;
+  color: var(--text-secondary);
+}
+
+.actions-cell {
+  display: flex;
+  gap: 8px;
+}
+
+.actions-cell a {
+  text-decoration: none;
+}
+
+/* ==========================================================================
    BOTÕES E COMPONENTES DE AÇÃO
    ========================================================================== */
 button {
