@@ -36,7 +36,7 @@ export function StockItems() {
                   </Link>
                   <Link to={`/editItem/${product.id}`}>
                     <button className="btn-update">Atualizar</button>
-                  </Link>s
+                  </Link>
                   <button className="btn-delete">Excluir</button>
                 </td>
               </tr>
