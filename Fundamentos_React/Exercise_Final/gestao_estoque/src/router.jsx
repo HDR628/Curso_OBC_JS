@@ -19,7 +19,7 @@ const router = createBrowserRouter([
       element: <StockItems/>
     },
     {
-      path: "Item",
+      path: "item/:itemId",
       element: <Item/>
     },
     {
@@ -27,11 +27,12 @@ const router = createBrowserRouter([
       element: <NewItem/>
     },
     {
-      path: "EditItem",
+      path: "editItem/:editId",
       element: <EditItem/>
     }
     ]
   }
 ])
+// path: "products/:productId",
 
 export default router
