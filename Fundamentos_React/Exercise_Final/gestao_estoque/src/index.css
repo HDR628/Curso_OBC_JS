@@ -321,6 +321,92 @@ button.btn-delete:hover {
 }
 
 /* ==========================================================================
+   FORMULÁRIOS DE CADASTRO E EDIÇÃO (NewItem & EditItem)
+   ========================================================================== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.display-flex-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1 1 180px; /* Distribui de forma flexível */
+  text-align: left;
+}
+
+/* Faz o campo de Nome (primeiro grupo) ocupar o dobro de espaço dos outros */
+.display-flex-row .form-group:first-of-type {
+  flex: 2 1 300px;
+}
+
+form label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* Inputs, Selects e Textareas */
+form input[type="text"],
+form input[type="number"],
+form select,
+form textarea {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-size: 15px;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: var(--btn-blue);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Campo de Descrição (Linha Inteira) */
+.descriptionArea {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.descriptionArea textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Botão Salvar (Submit do Form) */
+form button[type="submit"] {
+  align-self: flex-start;
+  background-color: var(--btn-blue);
+  color: #ffffff;
+  font-size: 15px;
+  padding: 10px 24px;
+  border-radius: 4px;
+}
+
+form button[type="submit"]:hover {
+  background-color: var(--btn-blue-hover);
+}
+
+/* ==========================================================================
    FOOTER (Feito com React e React Router)
    ========================================================================== */
 .footer,
