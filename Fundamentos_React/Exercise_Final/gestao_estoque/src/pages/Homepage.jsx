@@ -1,21 +1,25 @@
 import { Link } from "react-router-dom";
-import { defaultItems } from "../database";
+// import { defaultItems } from "../database";
+import { useContext } from "react";
+import { StockContext } from "../hooks/ItemsContext";
 
 export function Homepage() {
-  let qtdItems = defaultItems.length; // Qtd de items diferentes
+  const { items } = useContext(StockContext);
 
-  let totalItems = defaultItems.reduce((acc, item) => acc + item.quantity, 0);
+  let qtdItems = items.length; // Qtd de items diferentes
+
+  let totalItems = items.reduce((acc, item) => acc + item.quantity, 0);
 
   let date = new Date();
   date.setDate(date.getDate() - 10);
 
-  let recentItems = defaultItems.filter((item) => {
+  let recentItems = items.filter((item) => {
     const itemDate = new Date(item.createdAt);
     return itemDate >= date;
   });
   let recentItemsCount = recentItems.length;
 
-  let lowStockItems = defaultItems.filter((item) => item.quantity < 10);
+  let lowStockItems = items.filter((item) => item.quantity < 10);
 
   let lowStockCount = lowStockItems.length;
 

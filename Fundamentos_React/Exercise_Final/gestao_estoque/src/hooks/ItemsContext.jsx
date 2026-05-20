@@ -28,6 +28,6 @@ export function StockContextProvider({ children }) {
       return newState;
     });
   }
-}
 
-return <StockContext.Provider value={{ items, addItem }}>{children}</StockContext.Provider>;
+  return <StockContext.Provider value={{ items, addItem }}>{children}</StockContext.Provider>;
+}
