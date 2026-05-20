@@ -5,11 +5,15 @@ export function StockItems() {
   return (
     <>
       <h1>Stock Items</h1>
-      
+
       {/* Abas de navegação (Sub-menu) */}
       <div className="tabs">
-        <Link to="/StockItems" className="tab active">Todos os itens</Link>
-        <Link to="/NewItem" className="tab">Novo Item</Link>
+        <Link to="/StockItems" className="tab active">
+          Todos os itens
+        </Link>
+        <Link to="/NewItem" className="tab">
+          Novo Item
+        </Link>
       </div>
 
       <section className="productsTableSection">
